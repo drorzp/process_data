@@ -47,108 +47,108 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
             jsonData.currentInstance.outcome,
              pool);
 
-         jsonData.currentInstance.requests.forEach(async request => {
-                await insertRequests(decisionId, request.partyId, request.requests, pool);
-            });
+        //  for (const request of jsonData.currentInstance.requests) {
+        //         await insertRequests(decisionId, request.partyId, request.requests, pool);
+        //     }
 
-            jsonData.currentInstance.arguments.forEach(async argument => {
-                await insertArguments(decisionId, argument.partyId, argument.argument, argument.treatment, pool);
-            });
+        //     for (const argument of jsonData.currentInstance.arguments) {
+        //         await insertArguments(decisionId, argument.partyId, argument.argument, argument.treatment, pool);
+        //     }
 
-          jsonData.parties.forEach(async party => {
-            await insertParties(decisionId, party.id, party.name, party.type, party.proceduralRole, pool);
-          });
+        //   for (const party of jsonData.parties) {
+        //     await insertParties(decisionId, party.id, party.name, party.type, party.proceduralRole, pool);
+        //   }
 
-          jsonData.citedDecisions.forEach(async citedDecision => {
-            await insertCitedDecisions(decisionId, 
-                decisionId, 
-                citedDecision.decision_sequence,
-                citedDecision.court_jurisdiction_code, 
-                citedDecision.court_name,
-                 citedDecision.cited_date, 
-                 citedDecision.case_number, 
-                 citedDecision.ecli, 
-                 citedDecision.treatment, 
-                 citedDecision.cited_type, 
-                 citedDecision.internal_decision_id,
-                  pool);
-          });
+        //   for (const citedDecision of jsonData.citedDecisions) {
+        //     await insertCitedDecisions( 
+        //         decisionId, 
+        //         citedDecision.decisionSequence,
+        //         citedDecision.courtJurisdictionCode, 
+        //         citedDecision.courtName,
+        //          citedDecision.date, 
+        //          citedDecision.caseNumber, 
+        //          citedDecision.ecli, 
+        //          citedDecision.treatment, 
+        //          citedDecision.type, 
+        //          citedDecision.internalDecisionId,
+        //           pool);
+        //   }
 
-          jsonData.citedProvisions.forEach(async citedProvision => {
-            await insert_decisions_cited_provisions(
-                decisionId, 
-                citedProvision.provision_id,
-                citedProvision.parent_act_id, 
-                citedProvision.internal_provision_id,
-                 citedProvision.internal_parent_act_id, 
-                 citedProvision.provision_number, 
-                 citedProvision.provision_number_key, 
-                 citedProvision.parent_act_type, 
-                 citedProvision.parent_act_name, 
-                 citedProvision.parent_act_date,
-                 citedProvision.parent_act_number,
-                 citedProvision.provision_interpretation,
-                 citedProvision.relevant_factual_context,
-                  pool);
-          });
+        //   for (const citedProvision of jsonData.citedProvisions) {
+        //     await insert_decisions_cited_provisions(
+        //         decisionId, 
+        //         citedProvision.provisionId,
+        //         citedProvision.parentActId, 
+        //         citedProvision.internalProvisionId,
+        //          citedProvision.internalParentActId, 
+        //          citedProvision.provisionNumber, 
+        //          citedProvision.provisionNumberKey, 
+        //          citedProvision.parentActType, 
+        //          citedProvision.parentActName, 
+        //          citedProvision.parentActDate,
+        //          citedProvision.parentActName,
+        //          citedProvision.provisionInterpretation,
+        //          citedProvision.relevantFactualContext,
+        //           pool);
+        //   }
 
 
-        jsonData.relatedCitationsLegalProvisions.citedProvisions.forEach(async citedProvision => {
-            const decisionRelatedCitationsId =  await insert_decision_related_citations(decisionId, 
-                citedProvision.internal_provision_id,
-                citedProvision.relatedInternal_provisions_id,
-                 citedProvision.related_internal_decisions_id,
-                  pool);
-                  citedProvision.citations.forEach(async citation => {
-                   await insert_decision_related_citations_citations(
-                        decisionId, 
-                        decisionRelatedCitationsId,
-                        citation.block_id,
-                         citation.relevant_snippet,
-                          pool);
-                  });
-          });
+        // for (const citedProvision of jsonData.relatedCitationsLegalProvisions.citedProvisions) {
+        //     const decisionRelatedCitationsId =  await insert_decision_related_citations(decisionId, 
+        //         citedProvision.internalProvisionId,
+        //         citedProvision.relatedInternalProvisionsId,
+        //          citedProvision.relatedInternalDecisionsId,
+        //           pool);
+        //           for (const citation of citedProvision.citations) {
+        //            await insert_decision_related_citations_citations(
+        //                 decisionId, 
+        //                 decisionRelatedCitationsId,
+        //                 citation.blockId,
+        //                  citation.relevantSnippet,
+        //                   pool);
+        //           }
+        //   }
 
-          jsonData.legalTeachings.forEach(async legalTeaching => {
+          for (const legalTeaching of jsonData.legalTeachings) {
             await insert_decision_legal_teachings(decisionId, 
-                legalTeaching.teaching_id,
-                legalTeaching.teaching_text,
-                 legalTeaching.court_verbatim,
-                 legalTeaching.court_verbatim_language,
-                 legalTeaching.factual_trigger,
-                 legalTeaching.relevant_factual_context,    
-                 legalTeaching.principle_type,
-                 legalTeaching.legal_area,
-                 legalTeaching.hierarchical_relationships.refines_parent_principle,
-                 legalTeaching.hierarchical_relationships.refined_byChild_principles,
-                 legalTeaching.hierarchical_relationships.exception_to_principle,
-                 legalTeaching.hierarchical_relationships.excepted_by_principles,
-                 legalTeaching.hierarchical_relationships.conflicts_with,
-                 legalTeaching.precedential_weight.court_level,
-                 legalTeaching.precedential_weight.binding,
-                 legalTeaching.precedential_weight.clarity,
-                 legalTeaching.precedential_weight.novel_principle,
-                 legalTeaching.precedential_weight.confirms_existing_doctrine,
-                 legalTeaching.precedential_weight.distinguishes_prior_case,
-                 legalTeaching.related_legal_issues_id,
-                 legalTeaching.related_cited_provisions_id,
-                 legalTeaching.related_cited_decisions_id,
-                 legalTeaching.source_author,
+                legalTeaching.teachingId,
+                legalTeaching.text,
+                 legalTeaching.courtVerbatim,
+                 legalTeaching.courtVerbatimLanguage,
+                 legalTeaching.factualTrigger,
+                 legalTeaching.relevantFactualContext,    
+                 legalTeaching.principleType,
+                 legalTeaching.legalArea,
+                 legalTeaching.hierarchicalRelationships.refinesParentPrinciple,
+                 legalTeaching.hierarchicalRelationships.refinedByChildPrinciples,
+                 legalTeaching.hierarchicalRelationships.exceptionToPrinciple,
+                 legalTeaching.hierarchicalRelationships.exceptedByPrinciples,
+                 legalTeaching.hierarchicalRelationships.conflictsWith,
+                 legalTeaching.precedentialWeight.courtLevel,
+                 legalTeaching.precedentialWeight.binding,
+                 legalTeaching.precedentialWeight.clarity,
+                 legalTeaching.precedentialWeight.novelPrinciple,
+                 legalTeaching.precedentialWeight.confirmsExistingDoctrine,
+                 legalTeaching.precedentialWeight.distinguishesPriorCase,
+                 legalTeaching.relatedLegalIssuesId,
+                 legalTeaching.relatedCitedProvisionsId,
+                 legalTeaching.related_citedDecisionsId,
+                 legalTeaching.sourceAuthor,
                   pool);
-          });
+          }
 
-          jsonData.relatedCitationsLegalTeachings.legalTeachings.forEach(async legalTeachings => {
-          const  decision_related_citations_legal_teachings_id = await insert_decisions_related_citations_legal_teachings(decisionId, 
-                legalTeachings.teaching_id,
-                 pool);
-                 legalTeachings.citations.forEach(async citation => {
-            await insert_decisions_related_citations_legal_teachings_citations(decisionId, 
-                decision_related_citations_legal_teachings_id,
-                 citation.block_id,
-                 citation.relevant_snippet,
-                  pool);
-          });
-          });
+        //   jsonData.relatedCitationsLegalTeachings.legalTeachings.forEach(async legalTeachings => {
+        //   const  decision_related_citations_legal_teachings_id = await insert_decisions_related_citations_legal_teachings(decisionId, 
+        //         legalTeachings.teaching_id,
+        //          pool);
+        //          legalTeachings.citations.forEach(async citation => {
+        //     await insert_decisions_related_citations_legal_teachings_citations(decisionId, 
+        //         decision_related_citations_legal_teachings_id,
+        //          citation.block_id,
+        //          citation.relevant_snippet,
+        //           pool);
+        //   });
+        //   });
     
   } catch (error) {
     console.error(`Error processing file ${fileName}:`, error);

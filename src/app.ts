@@ -27,12 +27,15 @@ async function main() {
 
     // Read all files from the imported_files directory
     const files = fs.readdirSync(importedFilesDir);
-
-    // Loop through each file and log the filename
-    files.forEach((fileName) => {
-      console.log(fileName);
-      processFile(fileName, pool);
-    });
+    let flag = true;
+    // Loop through each file and process it
+    for (const fileName of files) {
+    if(flag) {
+        await processFile(fileName, pool);
+        console.log(fileName)
+        flag=false;
+    }
+    }
 
     client.release();
   } catch (error) {

@@ -5,14 +5,14 @@
 -- WARNING: This will delete all data in the affected tables and columns
 
 -- Drop all created tables (in reverse order)
-DROP TABLE IF EXISTS decisions_legal_teachings;
-DROP TABLE IF EXISTS decisions_related_citations_legal_teachings_citations;
-DROP TABLE IF EXISTS decisions_related_citations_legal_teachings;
+DROP TABLE IF EXISTS decision_legal_teachings;
+DROP TABLE IF EXISTS decision_related_citations_legal_teachings_citations;
+DROP TABLE IF EXISTS decision_related_citations_legal_teachings;
 DROP TABLE IF EXISTS decision_related_citations_citations;
 DROP TABLE IF EXISTS decision_related_citations;
-DROP TABLE IF EXISTS decisions_cited_provisions;
+DROP TABLE IF EXISTS decision_cited_provisions;
 DROP TABLE IF EXISTS cited_decisions;
-DROP TABLE IF EXISTS decisions_arguments;
+DROP TABLE IF EXISTS decision_arguments;
 DROP TABLE IF EXISTS decision_requests;
 DROP TABLE IF EXISTS decision_parties;
 

@@ -46,9 +46,9 @@ CREATE TABLE decisions_arguments (
   treatment varchar(50),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT decisions_arguments_pkey PRIMARY KEY (id)
+  CONSTRAINT decision_arguments_pkey PRIMARY KEY (id)
 );
-CREATE INDEX idx_decisions_arguments_decision_id ON decisions_arguments(decision_id);
+CREATE INDEX idx_decision_arguments_decision_id ON decision_arguments(decision_id);
 
 
 ALTER TABLE decisions1 
@@ -67,7 +67,6 @@ DROP COLUMN IF EXISTS decision_outcome;
 CREATE TABLE cited_decisions (
   id serial4 NOT NULL,
   decision_id INTEGER NOT NULL,  -- The decision that contains this citation
-  cited_decision_id INTEGER,  -- Reference to actual decision if it exists in our DB
   decision_sequence INTEGER NOT NULL,
   court_jurisdiction_code varchar(10),
   court_name varchar(255),
@@ -82,9 +81,9 @@ CREATE TABLE cited_decisions (
 CONSTRAINT cited_decisions_pkey PRIMARY KEY (id)
 );
 CREATE INDEX idx_cited_decisions_decision_id ON cited_decisions(decision_id);
-CREATE INDEX idx_cited_decisions_cited_decision_id ON cited_decisions(cited_decision_id);
 
-CREATE TABLE decisions_cited_provisions (
+
+CREATE TABLE decision_cited_provisions (
 id serial4 NOT NULL,
 decision_id INTEGER NOT NULL,
 provision_id INTEGER,
@@ -94,17 +93,17 @@ internal_parent_act_id varchar(255),
 provision_number varchar(30),
 provision_number_key varchar(30),
 parent_act_type varchar(30),
-parent_act_name varchar(60),
+parent_act_name varchar(255),
 parent_act_date DATE,
 parent_act_number varchar(100),
 provision_interpretation TEXT,
 relevant_factual_context TEXT,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-CONSTRAINT decisions_cited_provisions_pkey PRIMARY KEY (id)
+CONSTRAINT decision_cited_provisions_pkey PRIMARY KEY (id)
 );
 
-CREATE INDEX idx_decisions_cited_provisions_decision_id ON decisions_cited_provisions(decision_id);
+CREATE INDEX idx_decision_cited_provisions_decision_id ON decision_cited_provisions(decision_id);
 
 
 CREATE TABLE decision_related_citations (
@@ -137,7 +136,7 @@ CREATE TABLE decision_related_citations_citations (
 
 
 
-CREATE TABLE decisions_legal_teachings (
+CREATE TABLE decision_legal_teachings (
   id serial4 NOT NULL,
   decision_id INTEGER NOT NULL,
   teaching_id varchar(60) NOT NULL,
@@ -165,13 +164,13 @@ CREATE TABLE decisions_legal_teachings (
   source_author varchar(100),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT decisions_legal_teachings_pkey PRIMARY KEY (id)
+  CONSTRAINT decision_legal_teachings_pkey PRIMARY KEY (id)
 );
 
-CREATE INDEX idx_decisions_legal_teachings_decision_id 
-  ON decisions_legal_teachings(decision_id);
-CREATE INDEX idx_decisions_legal_teachings_teaching_id 
-  ON decisions_legal_teachings(teaching_id);
+CREATE INDEX idx_decision_legal_teachings_decision_id 
+  ON decision_legal_teachings(decision_id);
+CREATE INDEX idx_decision_legal_teachings_teaching_id 
+  ON decision_legal_teachings(teaching_id);
 
 
 
@@ -181,19 +180,19 @@ CREATE INDEX idx_decision_related_citations_citations_related_id
   ON decision_related_citations_citations(decision_related_citations_id);
 
 
-CREATE TABLE decisions_related_citations_legal_teachings (
+CREATE TABLE decision_related_citations_legal_teachings (
   id serial4 NOT NULL,
   decision_id INTEGER NOT NULL,
   teaching_id varchar(60) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT decisions_related_citations_legal_teachings_pkey PRIMARY KEY (id)
+  CONSTRAINT decision_related_citations_legal_teachings_pkey PRIMARY KEY (id)
 );
-CREATE INDEX idx_decisions_related_citations_legal_teachings_decision_id 
-  ON decisions_related_citations_legal_teachings(decision_id);
+CREATE INDEX idx_decision_related_citations_legal_teachings_decision_id 
+  ON decision_related_citations_legal_teachings(decision_id);
 
 
-CREATE TABLE decisions_related_citations_legal_teachings_citations (
+CREATE TABLE decision_related_citations_legal_teachings_citations (
   id serial4 NOT NULL,
   decision_id INTEGER NOT NULL,
   decisions_related_citations_legal_teachings_id INTEGER NOT NULL,
@@ -201,10 +200,10 @@ CREATE TABLE decisions_related_citations_legal_teachings_citations (
   relevant_snippet TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT decisions_related_citations_legal_teachings_citations_pkey PRIMARY KEY (id)
+  CONSTRAINT decision_related_citations_legal_teachings_citations_pkey PRIMARY KEY (id)
 );
 
 CREATE INDEX idx_drcltc_decision_id 
-  ON decisions_related_citations_legal_teachings_citations(decision_id);
+  ON decision_related_citations_legal_teachings_citations(decision_id);
 CREATE INDEX idx_drcltc_legal_teachings_id 
-  ON decisions_related_citations_legal_teachings_citations(decisions_related_citations_legal_teachings_id);
+  ON decision_related_citations_legal_teachings_citations(decision_related_citations_legal_teachings_id);

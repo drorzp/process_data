@@ -21,72 +21,72 @@ interface CurrentInstance {
     outcome: string;
 }
 interface CitedProvision {
-    provision_id: string | null;
-    parent_act_id: string | null;
-    internal_provision_id: string;
-    internal_parent_act_id: string;
-    provision_number: string;
-    provision_number_key: string;
-    parent_act_type: string;
-    parent_act_name: string;
-    parent_act_date: Date | null;
-    parent_act_number: string | null;
-    provision_interpretation: string | null;
-    relevant_factual_context: string | null;
+    provisionId: string | null;
+    parentActId: string | null;
+    internalProvisionId: string;
+    internalParentActId: string;
+    provisionNumber: string;
+    provisionNumberKey: string;
+    parentActType: string;
+    parentActName: string;
+    parentActDate: Date | null;
+    parentActNumber: string | null;
+    provisionInterpretation: string | null;
+    relevantFactualContext: string | null;
 }
 interface CitedDecision {
     decision_id: number | null;
     cited_decision_id: number | null;
-    decision_sequence: number;
-    court_jurisdiction_code: string;
-    court_name: string;
-    cited_date: Date;
-    case_number: string | null;
+    decisionSequence: number;
+    courtJurisdictionCode: string;
+    courtName: string;
+    date: Date;
+    caseNumber: string | null;
     ecli: string | null;
     treatment: string;
-    cited_type: string;
-    internal_decision_id: string;
+    type: string;
+    internalDecisionId: string;
 }
 interface HierarchicalRelationships {
-    refines_parent_principle: string | null;
-    refined_byChild_principles: string[];
-    exception_to_principle: string | null;
-    excepted_by_principles: string[];
-    conflicts_with: string[];
+    refinesParentPrinciple: string | null;
+    refinedByChildPrinciples: string[];
+    exceptionToPrinciple: string | null;
+    exceptedByPrinciples: string[];
+    conflictsWith: string[];
 }
 interface PrecedentialWeight {
-    court_level: string;
+    courtLevel: string;
     binding: boolean;
     clarity: string;
-    novel_principle: boolean;
-    confirms_existing_doctrine: boolean;
-    distinguishes_prior_case: boolean;
+    novelPrinciple: boolean;
+    confirmsExistingDoctrine: boolean;
+    distinguishesPriorCase: boolean;
 }
 interface LegalTeaching {
-    teaching_id: string;
-    teaching_text: string;
-    court_verbatim: string;
-    court_verbatim_language: string;
-    factual_trigger: string;
-    relevant_factual_context: string;
-    principle_type: string;
-    legal_area: string;
-    hierarchical_relationships: HierarchicalRelationships;
-    precedential_weight: PrecedentialWeight;
-    related_legal_issues_id: string[];
-    related_cited_provisions_id: string[];
-    related_cited_decisions_id: string[];
-    source_author: string;
+    teachingId: string;
+    teachinText: string;
+    courtVerbatim: string;
+    courtVerbatimLanguage: string;
+    factualTrigger: string;
+    relevantFactualContext: string;
+    principleType: string;
+    legalArea: string;
+    hierarchicalRelationships: HierarchicalRelationships;
+    precedentialWeight: PrecedentialWeight;
+    relatedLegalIssuesId: string[];
+    relatedCitedProvisionsId: string[];
+    related_citedDecisionsId: string[];
+    sourceAuthor: string;
 }
 interface Citation {
-    block_id: string;
-    relevant_snippet: string;
+    blockId: string;
+    relevantSnippet: string;
 }
 interface ProvisionCitation {
-    internal_provision_id: string;
+    internalProvisionId: string;
     citations: Citation[];
-    relatedInternal_provisions_id: string[];
-    related_internal_decisions_id: string[];
+    relatedInternalProvisionsId: string[];
+    relatedInternalDecisionsId: string[];
 }
 interface TeachingCitation {
     teaching_id: string;

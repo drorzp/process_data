@@ -76,9 +76,10 @@ async function insertRequests(decision_id, party_id, requests, pool) {
     }
 }
 async function insertArguments(decision_id, party_id, argument, treatment, pool) {
+    console.log(`Inserting arguments for decision with id: ${decision_id} ${party_id} ${argument} ${treatment}`);
     try {
         const query = `
-            INSERT INTO decisions_arguments (decision_id, party_id, argument, treatment)
+            INSERT INTO decision_arguments (decision_id, party_id, argument, treatment)
             VALUES ($1, $2, $3, $4)
         `;
         const result = await pool.query(query, [
@@ -130,15 +131,14 @@ async function insertParties(decision_id, party_id, party_name, party_type, proc
         throw error;
     }
 }
-async function insertCitedDecisions(decision_id, cited_decision_id, decision_sequence, court_jurisdiction_code, court_name, cited_date, case_number, ecli, treatment, cited_type, internal_decision_id, pool) {
+async function insertCitedDecisions(decision_id, decision_sequence, court_jurisdiction_code, court_name, cited_date, case_number, ecli, treatment, cited_type, internal_decision_id, pool) {
     try {
         const query = `
-            INSERT INTO cited_decisions(decision_id, cited_decision_id, decision_sequence, court_jurisdiction_code, court_name, cited_date, case_number, ecli, treatment, cited_type, internal_decision_id)
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+            INSERT INTO cited_decisions(decision_id, decision_sequence, court_jurisdiction_code, court_name, cited_date, case_number, ecli, treatment, cited_type, internal_decision_id)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
         `;
         const result = await pool.query(query, [
             decision_id,
-            cited_decision_id,
             decision_sequence,
             court_jurisdiction_code,
             court_name,
@@ -167,7 +167,7 @@ async function insertCitedDecisions(decision_id, cited_decision_id, decision_seq
 async function insert_decisions_cited_provisions(decision_id, provision_id, parent_act_id, internal_provision_id, internal_parent_act_id, provision_number, provision_number_key, parent_act_type, parent_act_name, parent_act_date, parent_act_number, provision_interpretation, relevant_factual_context, pool) {
     try {
         const query = `
-            INSERT INTO decisions_cited_provisions (decision_id, provision_id, parent_act_id, internal_provision_id, internal_parent_act_id, provision_number, provision_number_key, parent_act_type, parent_act_name, parent_act_date, parent_act_number, provision_interpretation, relevant_factual_context)
+            INSERT INTO decision_cited_provisions (decision_id, provision_id, parent_act_id, internal_provision_id, internal_parent_act_id, provision_number, provision_number_key, parent_act_type, parent_act_name, parent_act_date, parent_act_number, provision_interpretation, relevant_factual_context)
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
         `;
         const result = await pool.query(query, [
@@ -259,7 +259,7 @@ async function insert_decision_related_citations_citations(decision_id, decision
 async function insert_decision_legal_teachings(decision_id, teaching_id, teaching_text, court_verbatim, court_verbatim_language, factual_trigger, relevant_factual_context, principle_type, legal_area, refines_parent_principle, refined_by_child_principles, exception_to_principle, excepted_by_principles, conflicts_with, court_level, teaching_binding, clarity, novel_principle, confirms_existing_doctrine, distinguishes_prior_case, related_legal_issues_id, related_cited_provisions_id, related_cited_decisions_id, source_author, pool) {
     try {
         const query = `
-            INSERT INTO decisions_legal_teachings (decision_id, teaching_id, teaching_text, court_verbatim, court_verbatim_language, factual_trigger, relevant_factual_context, principle_type, legal_area, refines_parent_principle, refined_by_child_principles, exception_to_principle, excepted_by_principles, conflicts_with, court_level, teaching_binding, clarity, novel_principle, confirms_existing_doctrine, distinguishes_prior_case, related_legal_issues_id, related_cited_provisions_id, related_cited_decisions_id, source_author)
+            INSERT INTO decision_legal_teachings (decision_id, teaching_id, teaching_text, court_verbatim, court_verbatim_language, factual_trigger, relevant_factual_context, principle_type, legal_area, refines_parent_principle, refined_by_child_principles, exception_to_principle, excepted_by_principles, conflicts_with, court_level, teaching_binding, clarity, novel_principle, confirms_existing_doctrine, distinguishes_prior_case, related_legal_issues_id, related_cited_provisions_id, related_cited_decisions_id, source_author)
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29)
         `;
         const result = await pool.query(query, [
@@ -306,7 +306,7 @@ async function insert_decision_legal_teachings(decision_id, teaching_id, teachin
 async function insert_decisions_related_citations_legal_teachings(decision_id, teaching_id, pool) {
     try {
         const query = `
-            INSERT INTO decisions_related_citations_legal_teachings (decision_id, teaching_id)
+            INSERT INTO decision_related_citations_legal_teachings (decision_id, teaching_id)
             VALUES ($1, $2)
         `;
         const result = await pool.query(query, [
@@ -333,7 +333,7 @@ async function insert_decisions_related_citations_legal_teachings(decision_id, t
 async function insert_decisions_related_citations_legal_teachings_citations(decision_id, decision_related_citations_legal_teachings_id, block_id, relevant_snippet, pool) {
     try {
         const query = `
-          INSERT INTO decisions_related_citations_legal_teachings_citations (decision_id, decision_related_citations_legal_teachings_id, block_id, relevant_snippet)
+          INSERT INTO decision_related_citations_legal_teachings_citations (decision_id, decision_related_citations_legal_teachings_id, block_id, relevant_snippet)
           VALUES ($1, $2, $3, $4)
       `;
         const result = await pool.query(query, [
