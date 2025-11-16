@@ -99,7 +99,7 @@ interface ProvisionCitation {
 }
 
 interface TeachingCitation {
-  teaching_id: string;
+  teachingId: string;
   citations: Citation[];
 }
 

@@ -64,7 +64,7 @@ interface PrecedentialWeight {
 }
 interface LegalTeaching {
     teachingId: string;
-    teachinText: string;
+    text: string;
     courtVerbatim: string;
     courtVerbatimLanguage: string;
     factualTrigger: string;
@@ -89,7 +89,7 @@ interface ProvisionCitation {
     relatedInternalDecisionsId: string[];
 }
 interface TeachingCitation {
-    teaching_id: string;
+    teachingId: string;
     citations: Citation[];
 }
 interface RelatedCitationsLegalProvisions {

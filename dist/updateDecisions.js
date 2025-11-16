@@ -99,7 +99,7 @@ async function insertArguments(decision_id, party_id, argument, treatment, pool)
         }
     }
     catch (error) {
-        console.error(`Error inserting requests for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_arguments for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -160,7 +160,7 @@ async function insertCitedDecisions(decision_id, decision_sequence, court_jurisd
         }
     }
     catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting cited_decisions for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -196,7 +196,7 @@ async function insert_decisions_cited_provisions(decision_id, provision_id, pare
         }
     }
     catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decisions_cited_provisions for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -225,7 +225,7 @@ async function insert_decision_related_citations(decision_id, internal_provision
         }
     }
     catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_related_citations for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -252,15 +252,38 @@ async function insert_decision_related_citations_citations(decision_id, decision
         }
     }
     catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_related_citations_citations for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
 async function insert_decision_legal_teachings(decision_id, teaching_id, teaching_text, court_verbatim, court_verbatim_language, factual_trigger, relevant_factual_context, principle_type, legal_area, refines_parent_principle, refined_by_child_principles, exception_to_principle, excepted_by_principles, conflicts_with, court_level, teaching_binding, clarity, novel_principle, confirms_existing_doctrine, distinguishes_prior_case, related_legal_issues_id, related_cited_provisions_id, related_cited_decisions_id, source_author, pool) {
     try {
         const query = `
-            INSERT INTO decision_legal_teachings (decision_id, teaching_id, teaching_text, court_verbatim, court_verbatim_language, factual_trigger, relevant_factual_context, principle_type, legal_area, refines_parent_principle, refined_by_child_principles, exception_to_principle, excepted_by_principles, conflicts_with, court_level, teaching_binding, clarity, novel_principle, confirms_existing_doctrine, distinguishes_prior_case, related_legal_issues_id, related_cited_provisions_id, related_cited_decisions_id, source_author)
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29)
+            INSERT INTO decision_legal_teachings (decision_id, 
+            teaching_id, 
+            teaching_text, 
+            court_verbatim, 
+            court_verbatim_language, 
+            factual_trigger, 
+            relevant_factual_context, 
+            principle_type, 
+            legal_area, 
+            refines_parent_principle, 
+            refined_by_child_principles, 
+            exception_to_principle, 
+            excepted_by_principles, 
+            conflicts_with, 
+            court_level, 
+            teaching_binding, 
+            clarity, 
+            novel_principle, 
+            confirms_existing_doctrine, 
+            distinguishes_prior_case, 
+            related_legal_issues_id, 
+            related_cited_provisions_id,
+             related_cited_decisions_id, 
+             source_author)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24)
         `;
         const result = await pool.query(query, [
             decision_id,
@@ -299,7 +322,7 @@ async function insert_decision_legal_teachings(decision_id, teaching_id, teachin
         }
     }
     catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_legal_teachings for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -308,6 +331,7 @@ async function insert_decisions_related_citations_legal_teachings(decision_id, t
         const query = `
             INSERT INTO decision_related_citations_legal_teachings (decision_id, teaching_id)
             VALUES ($1, $2)
+            RETURNING id
         `;
         const result = await pool.query(query, [
             decision_id,
@@ -326,7 +350,7 @@ async function insert_decisions_related_citations_legal_teachings(decision_id, t
         ;
     }
     catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decisions_related_citations_legal_teachings for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -353,7 +377,7 @@ async function insert_decisions_related_citations_legal_teachings_citations(deci
         }
     }
     catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decisions_related_citations_legal_teachings_citations with id ${decision_id}:`, error);
         throw error;
     }
 }

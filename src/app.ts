@@ -30,11 +30,28 @@ async function main() {
     let flag = true;
     // Loop through each file and process it
     for (const fileName of files) {
-    if(flag) {
+      try {
         await processFile(fileName, pool);
         console.log(fileName)
-        flag=false;
-    }
+      } catch (error) {
+        console.error(`Failed to process file ${fileName}:`, error);
+        
+        // Copy failed file to errors folder
+        const sourceFilePath = path.join(importedFilesDir, fileName);
+        const errorsDir = path.join(__dirname, 'errors');
+        
+        // Create errors directory if it doesn't exist
+        if (!fs.existsSync(errorsDir)) {
+          fs.mkdirSync(errorsDir, { recursive: true });
+        }
+        
+        const errorFilePath = path.join(errorsDir, fileName);
+        fs.copyFileSync(sourceFilePath, errorFilePath);
+        console.log(`File copied to errors folder: ${errorFilePath}`);
+        
+        // Continue to next file
+        continue;
+      }
     }
 
     client.release();

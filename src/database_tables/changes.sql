@@ -4,11 +4,20 @@ ADD COLUMN custom_keywords varchar(255)[];
 ALTER TABLE decisions1 
 ADD COLUMN micro_summary TEXT;
 
-ALTER TABLE decisions_metadata 
-DROP COLUMN IF EXISTS decision_recap;
+
 
 ALTER TABLE decisions1 
 ADD COLUMN citation_reference varchar(255);
+
+ALTER TABLE decisions1 
+ADD COLUMN facts TEXT;
+
+ALTER TABLE decisions1 
+ADD COLUMN court_order TEXT;
+
+
+ALTER TABLE decisions1 
+ADD COLUMN outcome varchar(50);
 
 CREATE TABLE decision_parties (
   id serial4 NOT NULL,
@@ -24,8 +33,8 @@ CREATE TABLE decision_parties (
 CREATE INDEX idx_decision_parties_decision_id ON decision_parties(decision_id);
 CREATE UNIQUE INDEX idx_decision_parties_party_id ON decision_parties(party_id);
 
-ALTER TABLE decisions1 
-ADD COLUMN facts TEXT;
+
+
 
 CREATE TABLE decision_requests (
   id serial4 NOT NULL,
@@ -38,7 +47,7 @@ CREATE TABLE decision_requests (
 );
 CREATE INDEX idx_decision_requests_decision_id ON decision_requests(decision_id);
 
-CREATE TABLE decisions_arguments (
+CREATE TABLE decision_arguments (
   id serial4 NOT NULL,
   decision_id INTEGER NOT NULL,
   party_id varchar(255) NOT NULL,
@@ -51,17 +60,7 @@ CREATE TABLE decisions_arguments (
 CREATE INDEX idx_decision_arguments_decision_id ON decision_arguments(decision_id);
 
 
-ALTER TABLE decisions1 
-ADD COLUMN court_order text;
 
-ALTER TABLE decisions_metadata 
-DROP COLUMN IF EXISTS court_order;
-
-ALTER TABLE decisions1 
-ADD COLUMN outcome varchar(50);
-
-ALTER TABLE decisions_metadata 
-DROP COLUMN IF EXISTS decision_outcome;
 
 
 CREATE TABLE cited_decisions (
@@ -73,8 +72,8 @@ CREATE TABLE cited_decisions (
   cited_date DATE,
   case_number varchar(255),
   ecli varchar(255),
-  treatment varchar(100),
-  cited_type varchar(100),
+  treatment varchar(255),
+  cited_type varchar(255),
   internal_decision_id varchar(255) UNIQUE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -93,9 +92,9 @@ internal_parent_act_id varchar(255),
 provision_number varchar(30),
 provision_number_key varchar(30),
 parent_act_type varchar(30),
-parent_act_name varchar(255),
+parent_act_name TEXT,
 parent_act_date DATE,
-parent_act_number varchar(100),
+parent_act_number varchar(255),
 provision_interpretation TEXT,
 relevant_factual_context TEXT,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -143,8 +142,8 @@ CREATE TABLE decision_legal_teachings (
   teaching_text TEXT,
   court_verbatim TEXT,
   court_verbatim_language varchar(2),
-  factual_trigger varchar(255),
-  relevant_factual_context varchar(255),
+  factual_trigger TEXT,
+  relevant_factual_context TEXT,
   principle_type varchar(50),
   legal_area varchar(50),
   refines_parent_principle varchar(50),
@@ -195,7 +194,7 @@ CREATE INDEX idx_decision_related_citations_legal_teachings_decision_id
 CREATE TABLE decision_related_citations_legal_teachings_citations (
   id serial4 NOT NULL,
   decision_id INTEGER NOT NULL,
-  decisions_related_citations_legal_teachings_id INTEGER NOT NULL,
+  decision_related_citations_legal_teachings_id INTEGER NOT NULL,
   block_id varchar(60),
   relevant_snippet TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

@@ -99,7 +99,7 @@ export async function insertArguments(decision_id: number, party_id: string, arg
             return false;
         }
     } catch (error) {
-        console.error(`Error inserting requests for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_arguments for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -174,7 +174,7 @@ export async function insertCitedDecisions(
             return false;
         }
     } catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting cited_decisions for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -225,7 +225,7 @@ export async function insert_decisions_cited_provisions(
             return false;
         }
     } catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decisions_cited_provisions for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -260,7 +260,7 @@ export async function insert_decision_related_citations(
             return -1;
         }
     } catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_related_citations for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -294,7 +294,7 @@ export async function insert_decision_related_citations_citations(
             return false;
         }
     } catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_related_citations_citations for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -392,7 +392,7 @@ export async function insert_decision_legal_teachings(
             return false;
         }
     } catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decision_legal_teachings for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -405,6 +405,7 @@ export async function insert_decisions_related_citations_legal_teachings(
         const query = `
             INSERT INTO decision_related_citations_legal_teachings (decision_id, teaching_id)
             VALUES ($1, $2)
+            RETURNING id
         `;
         
         const result = await pool.query(query, [
@@ -423,7 +424,7 @@ export async function insert_decisions_related_citations_legal_teachings(
         };
         
     } catch (error) {
-        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        console.error(`Error inserting decisions_related_citations_legal_teachings for decision with id ${decision_id}:`, error);
         throw error;
     }
 }
@@ -457,7 +458,7 @@ export async function insert_decisions_related_citations_legal_teachings_citatio
           return false;
       }
   } catch (error) {
-      console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+      console.error(`Error inserting decisions_related_citations_legal_teachings_citations with id ${decision_id}:`, error);
       throw error;
   }
 }
