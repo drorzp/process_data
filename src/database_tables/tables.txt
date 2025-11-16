@@ -1,0 +1,276 @@
+-- public.decisions1 definition
+
+-- Drop table
+
+-- DROP TABLE public.decisions1;
+
+CREATE TABLE public.decisions1 (
+	id serial4 NOT NULL,
+	decision_id varchar(50) NULL,
+	file_name varchar(100) NOT NULL,
+	url_official_publication varchar(180) NULL,
+	language_metadata bpchar(2) NOT NULL,
+	court_ecli_code varchar(20) NULL,
+	decision_type_ecli_code varchar(50) NULL,
+	decision_date varchar(15) NULL,
+	versions _text NULL,
+	url_pdf varchar(128) NULL,
+	rol_number varchar(255) NULL,
+	"case" varchar(255) NULL,
+	chamber varchar(60) NULL,
+	field_of_law varchar(255) NULL,
+	opinion_public_attorney varchar(80) NULL,
+	precedent _varchar NULL,
+	cited_in _varchar NULL,
+	see_more_recently _varchar NULL,
+	preceded_by _varchar NULL,
+	followed_by _varchar NULL,
+	rectification _varchar NULL,
+	related_case _varchar NULL,
+	created_at timestamptz NULL,
+	updated_at timestamptz NULL,
+	"source" varchar(255) NULL,
+	jurisdiction varchar(8) NULL,
+	citing _varchar NULL,
+	CONSTRAINT decisions1_pkey PRIMARY KEY (id)
+);
+CREATE UNIQUE INDEX decisions1_decision_id_idx ON public.decisions1 USING btree (decision_id, language_metadata);
+
+
+-- public.decisions_metadata_parties definition
+
+-- Drop table
+
+-- DROP TABLE public.decisions_metadata_parties;
+
+CREATE TABLE public.decisions_metadata_parties (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	party_id varchar(100) NULL,
+	role_procedural varchar(50) NULL,
+	role_specific text NULL,
+	identity_name text NULL,
+	identity_type varchar(100) NULL,
+	representation_type varchar(100) NULL,
+	rep_name varchar(255) NULL,
+	rep_title varchar(255) NULL,
+	rep_function varchar(255) NULL,
+	CONSTRAINT decisions_metadata_parties_pkey PRIMARY KEY (id)
+);
+CREATE INDEX decisions_metadata_parties_decision_id_idx ON public.decisions_metadata_parties USING btree (decision_id);
+
+
+-- public.decision_current_instance definition
+
+-- Drop table
+
+-- DROP TABLE public.decision_current_instance;
+
+CREATE TABLE public.decision_current_instance (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	facts text NULL,
+	court_order text NULL,
+	outcome varchar(50) NULL,
+	CONSTRAINT decision_current_instance_pkey PRIMARY KEY (id)
+);
+CREATE INDEX decision_current_instance_decision_id_idx ON public.decision_current_instance USING btree (decision_id);
+
+
+-- public.decision_requests definition
+
+-- Drop table
+
+-- DROP TABLE public.decision_requests;
+
+CREATE TABLE public.decision_requests (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	party_id varchar(100) NULL,
+	requests text NULL,
+	CONSTRAINT decision_requests_pkey PRIMARY KEY (id)
+);
+CREATE INDEX decision_requests_decision_id_idx ON public.decision_requests USING btree (decision_id);
+
+
+-- public.decision_arguments definition
+
+-- Drop table
+
+-- DROP TABLE public.decision_arguments;
+
+CREATE TABLE public.decision_arguments (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	party_id varchar(100) NULL,
+	argument text NULL,
+	treatment varchar(50) NULL,
+	CONSTRAINT decision_arguments_pkey PRIMARY KEY (id)
+);
+CREATE INDEX decision_arguments_decision_id_idx ON public.decision_arguments USING btree (decision_id);
+
+
+-- public.cited_provisions definition
+
+-- Drop table
+
+-- DROP TABLE public.cited_provisions;
+
+CREATE TABLE public.cited_provisions (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	provision_id varchar(255) NULL,
+	parent_act_id varchar(255) NULL,
+	internal_provision_id varchar(255) NULL,
+	internal_parent_act_id varchar(255) NULL,
+	provision_number varchar(100) NULL,
+	provision_number_key varchar(50) NULL,
+	parent_act_type varchar(50) NULL,
+	parent_act_name varchar(500) NULL,
+	parent_act_date varchar(20) NULL,
+	parent_act_number varchar(100) NULL,
+	provision_interpretation text NULL,
+	relevant_factual_context text NULL,
+	CONSTRAINT cited_provisions_pkey PRIMARY KEY (id)
+);
+CREATE INDEX cited_provisions_decision_id_idx ON public.cited_provisions USING btree (decision_id);
+CREATE INDEX cited_provisions_internal_provision_id_idx ON public.cited_provisions USING btree (internal_provision_id);
+
+
+-- public.cited_decisions definition
+
+-- Drop table
+
+-- DROP TABLE public.cited_decisions;
+
+CREATE TABLE public.cited_decisions (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	cited_decision_id varchar(255) NULL,
+	decision_sequence int4 NULL,
+	court_jurisdiction_code varchar(10) NULL,
+	court_name varchar(255) NULL,
+	date varchar(20) NULL,
+	case_number varchar(100) NULL,
+	ecli varchar(255) NULL,
+	treatment varchar(50) NULL,
+	type varchar(50) NULL,
+	internal_decision_id varchar(255) NULL,
+	CONSTRAINT cited_decisions_pkey PRIMARY KEY (id)
+);
+CREATE INDEX cited_decisions_decision_id_idx ON public.cited_decisions USING btree (decision_id);
+CREATE INDEX cited_decisions_ecli_idx ON public.cited_decisions USING btree (ecli);
+CREATE INDEX cited_decisions_internal_decision_id_idx ON public.cited_decisions USING btree (internal_decision_id);
+
+
+
+
+
+-- public.legal_teachings definition
+
+-- Drop table
+
+-- DROP TABLE public.legal_teachings;
+
+CREATE TABLE public.legal_teachings (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	teaching_id varchar(255) NULL,
+	text text NULL,
+	court_verbatim text NULL,
+	court_verbatim_language varchar(10) NULL,
+	factual_trigger text NULL,
+	relevant_factual_context text NULL,
+	principle_type varchar(100) NULL,
+	legal_area varchar(100) NULL,
+	source_author varchar(50) NULL,
+	CONSTRAINT legal_teachings_pkey PRIMARY KEY (id)
+);
+CREATE INDEX legal_teachings_decision_id_idx ON public.legal_teachings USING btree (decision_id);
+CREATE INDEX legal_teachings_teaching_id_idx ON public.legal_teachings USING btree (teaching_id);
+
+
+-- public.legal_teaching_precedential_weight definition
+
+-- Drop table
+
+-- DROP TABLE public.legal_teaching_precedential_weight;
+
+CREATE TABLE public.legal_teaching_precedential_weight (
+	id serial4 NOT NULL,
+	teaching_id int4 NULL,
+	court_level varchar(50) NULL,
+	binding boolean NULL,
+	clarity varchar(50) NULL,
+	novel_principle boolean NULL,
+	confirms_existing_doctrine boolean NULL,
+	distinguishes_prior_case boolean NULL,
+	CONSTRAINT legal_teaching_precedential_weight_pkey PRIMARY KEY (id)
+);
+CREATE INDEX legal_teaching_precedential_weight_teaching_id_idx ON public.legal_teaching_precedential_weight USING btree (teaching_id);
+
+
+-- public.legal_teaching_related_provisions definition
+
+-- Drop table
+
+-- DROP TABLE public.legal_teaching_related_provisions;
+
+CREATE TABLE public.legal_teaching_related_provisions (
+	id serial4 NOT NULL,
+	teaching_id int4 NULL,
+	internal_provision_id varchar(255) NULL,
+	CONSTRAINT legal_teaching_related_provisions_pkey PRIMARY KEY (id)
+);
+CREATE INDEX legal_teaching_related_provisions_teaching_id_idx ON public.legal_teaching_related_provisions USING btree (teaching_id);
+
+
+-- public.legal_teaching_related_decisions definition
+
+-- Drop table
+
+-- DROP TABLE public.legal_teaching_related_decisions;
+
+CREATE TABLE public.legal_teaching_related_decisions (
+	id serial4 NOT NULL,
+	teaching_id int4 NULL,
+	internal_decision_id varchar(255) NULL,
+	CONSTRAINT legal_teaching_related_decisions_pkey PRIMARY KEY (id)
+);
+CREATE INDEX legal_teaching_related_decisions_teaching_id_idx ON public.legal_teaching_related_decisions USING btree (teaching_id);
+
+
+-- public.provision_citations definition
+
+-- Drop table
+
+-- DROP TABLE public.provision_citations;
+
+CREATE TABLE public.provision_citations (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	internal_provision_id varchar(255) NULL,
+	block_id varchar(255) NULL,
+	relevant_snippet text NULL,
+	CONSTRAINT provision_citations_pkey PRIMARY KEY (id)
+);
+CREATE INDEX provision_citations_decision_id_idx ON public.provision_citations USING btree (decision_id);
+CREATE INDEX provision_citations_internal_provision_id_idx ON public.provision_citations USING btree (internal_provision_id);
+
+
+-- public.teaching_citations definition
+
+-- Drop table
+
+-- DROP TABLE public.teaching_citations;
+
+CREATE TABLE public.teaching_citations (
+	id serial4 NOT NULL,
+	decision_id int4 NULL,
+	teaching_id varchar(255) NULL,
+	block_id varchar(255) NULL,
+	relevant_snippet text NULL,
+	CONSTRAINT teaching_citations_pkey PRIMARY KEY (id)
+);
+CREATE INDEX teaching_citations_decision_id_idx ON public.teaching_citations USING btree (decision_id);
+CREATE INDEX teaching_citations_teaching_id_idx ON public.teaching_citations USING btree (teaching_id);

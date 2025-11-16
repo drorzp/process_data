@@ -1,0 +1,1073 @@
+{
+  "decision_id": "ECLI:BE:CASS:2001:ARR.20010601.5",
+  "language": "NL",
+  "citationReference": "Cass., 1 juni 2001, C.98.0540.N, ECLI:BE:CASS:2001:ARR.20010601.5",
+  "parties": [
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+      "name": "MURFITT INTERNATIONAL FREIGHT Ltd.",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "EISER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+      "name": "MURFITT'S TRANSPORT ELY Ltd.",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "EISER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+      "name": "ZEEMAR",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-004",
+      "name": "MACOTRUCK",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+      "name": "SEA RO TERMINAL",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+      "name": "GUARDIAN ROYALE EXCHANGE",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-007",
+      "name": "LA NEUCHATELOISE S.A.",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+      "name": "LE FOYER S.A.",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-009",
+      "name": "DE SCHELDE",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-010",
+      "name": "ASSOCIATED WEAVERS EUROPE",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    },
+    {
+      "id": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-011",
+      "name": "GROUP 4 SECURITAS",
+      "type": "LEGAL_ENTITY",
+      "proceduralRole": "VERWEERDER_IN_CASSATIE"
+    }
+  ],
+  "currentInstance": {
+    "facts": "Het geschil vloeit voort uit de diefstal in februari 1988 in Zeebrugge van een trailer met een lading tapijten op de terreinen van NV Sea Ro Terminal, stuwadoor. NV Associated Weavers Europe, als verzender, beoogde een zending naar Harris in Swanley (Verenigd Koninkrijk) en deed een beroep op Murfitt International Freight Ltd. als hoofdvervoerder, die de trailer huurde van Murfitt's Transport Ely Ltd. Voor het vervoer van Ronse naar Zeebrugge deed de hoofdvervoerder een beroep op NV Zeemar als commissionair-expediteur, die NV Macotruck aansprak. Voor het zeevervoer deed Murfitt International een beroep op Kent Lines waarvoor Sea Ro Terminal als stuwadoor optrad. NV Macotruck bracht de trailer op 16 februari 1988 naar Zeebrugge en plaatste die op het terrein van Sea Ro Terminal in afwachting van inscheping op het m.s. \"Finn Fellow\"; de terreinen werden bewaakt door Group 4 Securitas. Op 14 februari 1989 dagvaardden de eiseressen Zeemar, Macotruck en Sea Ro Terminal voor betaling van de waarde van de verdwenen lading en trailer; Macotruck dagvaardde Group 4 Securitas in tussenkomst en vrijwaring. Daarnaast dagvaardden de verzender en haar verzekeraars Murfitt International voor betaling; Murfitt stelde derden in tussenkomst en vrijwaring. De zaken werden wegens samenhang overgedragen en bij vonnis van 9 maart 1993 veroordeelde de Rechtbank van Koophandel te Brugge Murfitt International tot betaling aan Associated Weavers Europe en haar verzekeraars van £21.491,15 plus interest; Sea Ro Terminal werd veroordeeld tot integrale vrijwaring van Murfitt International en tot betaling van £16.186,25 plus interest aan de tweede eiseres; Group 4 Securitas werd veroordeeld tot integrale vrijwaring van Sea Ro Terminal. Group 4 Securitas tekende hoger beroep aan bij verzoekschrift van 17 juni 1993; alle partijen werden bij het hoger beroep betrokken; Sea Ro Terminal stelde een incidenteel beroep in en de eiseressen stelden op hun beurt incidenteel beroep in; eerste eiseres stelde bovendien hoofdberoep in bij exploot van 1 juni 1993 tegen Associated Weavers Europe en haar verzekeraars.",
+    "requests": [],
+    "arguments": [
+      {
+        "partyId": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+        "argument": "De eiseressen voeren aan dat het Hof van Beroep ten onrechte hun incidenteel beroep gericht tegen NV Zeemar en NV Macotruck niet-ontvankelijk heeft verklaard in strijd met artikel 1054 e.v. van het Gerechtelijk Wetboek en het algemeen rechtsbeginsel van de autonomie van de procespartijen en het recht van verdediging. Zij stellen dat zij door het incidenteel beroep van NV Sea Ro Terminal de hoedanigheid van gedaagde in hoger beroep kregen en bijgevolg incidenteel beroep mochten instellen tegen alle in het geding zijnde partijen; voorts bekritiseren zij dat het hof ambtshalve een door partijen niet betwistte rechtsgrond heeft ingeroepen zonder de debatten te heropenen, waardoor hun verdediging is geschaad.",
+        "treatment": "NIET-ONTVANKELIJK"
+      },
+      {
+        "partyId": "PARTY-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+        "argument": "De eiseressen betogen voorts dat het hof op onjuiste rechtsgrond de vordering van de hoofdvervoerder en van de verhuurder van de trailer tegen de stuwadoor NV Sea Ro Terminal als niet-toelaatbaar heeft beschouwd door te oordelen dat de stuwadoor louter als uitvoeringsagent van de rederij Kent Lines aansprakelijk kon zijn en dat eventuele aansprakelijkheid uitsluitend contractueel zou zijn. Zij stellen dat een uitvoeringsagent buitencontractueel aansprakelijk kan zijn ten aanzien van derden indien de hem verweten fout een schending van de algemene zorgvuldigheidsnorm inhoudt en andere schade heeft veroorzaakt dan louter de contractuele tekortkoming, zodat de vorderingen van de eiseressen tegen de stuwadoor wel ontvankelijk en gegrond kunnen zijn.",
+        "treatment": "GEDEELTELIJK_AANVAARD"
+      }
+    ],
+    "courtOrder": "OM DIE REDENEN, \n\nVernietigt het bestreden arrest in zoverre het uitspraak doet over de vordering van de tweede eiseres tegenover de derde verweerster en uitspraak doet over de vordering tot tussenkomst van de derde verweerster tegenover de negende verweerster ;\n\nVerklaart het arrest bindend voor de verweersters sub 4 tot 8 ;\n\nVerwerpt de voorziening voor het overige ;\n\nBeveelt dat van dit arrest melding zal worden gemaakt op de kant van het gedeeltelijk vernietigde arrest ;\n\nVeroordeelt de eiseressen in de helft van de kosten ;\n\nHoudt de overige kosten aan en laat de beslissing daaromtrent aan de feitenrechter over ;\n\nVerwijst de aldus beperkte zaak naar het Hof van Beroep te Antwerpen.",
+    "outcome": "GEDEELTELIJKE_CASSATIE"
+  },
+  "citedProvisions": [
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+      "provisionNumber": "artikel 774, tweede lid",
+      "provisionNumberKey": "774",
+      "parentActType": "WETBOEK",
+      "parentActName": "Gerechtelijk Wetboek",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof verklaart dat artikel 774, tweede lid, de grens aangeeft waarbinnen de rechter ambtshalve rechtsgronden mag aanvullen: hij mag slechts steunen op kwesties die de partijen regelmatig hebben voorgelegd, geen betwisting inroepen die partijen bij conclusie hebben uitgesloten, het voorwerp of de oorzaak van de vordering niet wijzigen en steeds het recht van verdediging eerbiedigen; het openbaart dat het ambtshalve aanvoeren van een nieuw rechtsmotief zonder heropening van de debatten het recht van verdediging en de procesautonomie kan schenden.",
+      "relevantFactualContext": "In het geding stelde slechts één verweerster (Macotruck) ontvankelijkheid van het incidenteel beroep in vraag; het hof steunde deels op een ambtshalve opgeworpen rechtsgrond jegens eerste verweerster zonder de debatten te heropenen, zodat eisers geen gelegenheid hadden tot verweer."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+      "provisionNumber": "artikel 1054, eerste lid",
+      "provisionNumberKey": "1054",
+      "parentActType": "WETBOEK",
+      "parentActName": "Gerechtelijk Wetboek",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof interpreteert artikel 1054, eerste lid, aldus dat de gedaagde in hoger beroep te allen tijde incidenteel beroep kan instellen tegen alle partijen die in het geding zijn voor de rechter in hoger beroep, doch dat hiervoor vereist is dat tegen die gedaagde iets wordt gevorderd; een partij tegen wie door de appellant niets wordt gevorderd kan niet als gedaagde in hoger beroep worden beschouwd.",
+      "relevantFactualContext": "Group 4 stelde hoofdberoep in tegen meerdere partijen maar vorderde slechts de verwerping van de vrijwaring; Sea Ro Terminal stelde incidenteel beroep in tegen de eiseressen, die vervolgens incidenteel beroep instelden tegen Zeemar en Macotruck; discussie speelde of eisers als gedaagden in hoger beroep konden gelden."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+      "provisionNumber": "artikel 1056, 4°",
+      "provisionNumberKey": "1056",
+      "parentActType": "WETBOEK",
+      "parentActName": "Gerechtelijk Wetboek",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "In samenhang met artikel 1054 verduidelijkt het Hof dat artikel 1056, 4°, bij de beoordeling van de ontvankelijkheid van incidentele beroepen meebrengt dat enkel partijen die door een appellant of door een andere gedaagde in hoger beroep daadwerkelijk worden aangesproken belanghebbend zijn; de rechter mag niet louter op grond van het ontbreken van een vordering door de hoofdappellant incidentele beroepen uitsluiten wanneer andere procesrelaties (bv. incidenteel appellanten) wel een vordering tegen die partij openbaren.",
+      "relevantFactualContext": "Het hof van beroep verklaarde incidentele beroepen van de eiseressen tegenover Zeemar en Macotruck niet-ontvankelijk op grond dat de hoofdappellant (Group 4) niets tegen hen had gevorderd, terwijl Sea Ro Terminal haar incidenteel beroep wel ontvankelijk had gesteld."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-004",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+      "provisionNumber": "artikel 1138, 2°",
+      "provisionNumberKey": "1138",
+      "parentActType": "WETBOEK",
+      "parentActName": "Gerechtelijk Wetboek",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof leest artikel 1138, 2°, als verankering van het beginsel dat partijen de grenzen van het burgerlijk geschil bepalen: de rechter mag door ambtshalve toevoeging van rechtsgronden de aard, het voorwerp of de oorzaak van de vordering niet wijzigen en moet de procesautonomie eerbiedigen; handelen in strijd hiermee kan de rechtsbescherming en het verdedigingsrecht aantasten.",
+      "relevantFactualContext": "De appèlrechters steunden hun ontvankelijkheidsbeslissing deels op ambtshalve aangevoerde rechtsgronden zonder de debatten te heropenen, wat volgens het Hof de procesautonomie en het recht van verdediging van de eiseressen aantastte."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+      "provisionNumber": "artikel 1121",
+      "provisionNumberKey": "1121",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof behandelt artikel 1121 binnen de algemene context van verbintenissenrecht: contractuele rechtsrelaties bepalen doorgaans de rechtsgevolgen tussen partijen; wanneer de schade van een derde uitsluitend volgt uit de contractuele tekortkoming van de verbintenis, kan dit de toelaatbaarheid van een zelfstandige vordering door die derde beperken, tenzij bijkomende feiten een eigen extra-contractuele onrechtmatigheid aantonen.",
+      "relevantFactualContext": "De eigenares van de verdwenen trailer (tweede eiseres) vorderde rechtstreeks tegen de stuwadoor terwijl de schade samenhing met de contractuele verplichting tot bewaring en stuwing; het Hof onderzocht of die schade afzonderlijk en buitencontractueel was aangetoond."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+      "provisionNumber": "artikel 1134",
+      "provisionNumberKey": "1134",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof plaatst artikel 1134 in de context dat contractuele verplichtingen regelen welke schade het gevolg is van wanprestatie; het wijst erop dat een derde alleen dan een rechtstreeks contractueel recht kan ontlenen indien tussen hem en de schuldenaar een contractuele relatie of duidelijke wettelijke grondslag bestaat, anders moet worden beoordeeld of er een autonome extra-contractuele aansprakelijkheid bestaat.",
+      "relevantFactualContext": "De eiseressen voerden vorderingen aan naast en tegen de achtergrond van bestaande vervoers- en huurcontracten; het Hof vroeg vast te stellen of er een rechtstreekse contractuele of een afzonderlijke buitencontractuele grondslag bestond."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-007",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1135",
+      "provisionNumberKey": "1135",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof behandelt artikel 1135 als onderdeel van de regels over wederkerige verbintenissen en hun gevolgen: een derde kan niet gemakkelijk rechten ontlenen aan contractuele betrekkingen tussen anderen; bij beoordeling van een vordering van een derde moet worden nagegaan of de schade zich onderscheidt van de contractuele tekortkoming waarvoor de contractpartij reeds aansprakelijk is.",
+      "relevantFactualContext": "De tweede eiseres (verhuurster) trad procedureel samen op met de hoofdvervoerder en stelde een rechtstreekse vordering tegen de stuwadoor; het Hof oordeelde dat niet aangetoond was dat de schade van de verhuurster anders was dan de contractuele schade."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+      "provisionNumber": "artikel 1136",
+      "provisionNumberKey": "1136",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof gebruikt artikel 1136 binnen de uitleg dat de inhoud en omvang van verbintenissen tussen partijen bepalen welk verlies voor vergoeding in aanmerking komt; bij aanspraken van derden moet worden nagegaan of hun schade boven en buiten de contractuele tekortkoming uitstijgt, en of er een zelfstandige onrechtmatige daad is begaan.",
+      "relevantFactualContext": "De kwestie betrof of de schade door diefstal van trailer en lading een eigen onrechtmatige daad opleverde tegenover derden (eigenaar/verhuurder) of louter het gevolg was van contractuele wanprestatie tussen vervoerders."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-009",
+      "internalParentActId": "ACT-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+      "provisionNumber": "artikel 1137",
+      "provisionNumberKey": "1137",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof beschouwt artikel 1137 als onderdeel van de systematiek die bepaalt dat contractuele schulden en hun gevolgen in de eerste plaats tussen contractspartijen moeten worden uitgewerkt; het besluit dat derden slechts een directe vordering kunnen instellen indien blijkt dat hun schade een zelfstandige, buitencontractuele grondslag heeft en niet louter contractueel van aard is.",
+      "relevantFactualContext": "De verhuurster van de trailer vorderde dat haar schade afwijkt van de contractuele schade waarop de hoofdvervoerder aanspraak had; dit moest empirisch worden aangetoond, wat volgens het hof ontbrak."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-010",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1142",
+      "provisionNumberKey": "1142",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof rekent artikel 1142 tot de bepalingen die het regime van verbintenissen en nakoming regelen; in de zaak benadrukt het Hof dat de toelaatbaarheid van vorderingen tegen derden afhangt van de vraag of de geleden schade onderscheiden is van de schade verbonden aan de contractuele tekortkoming en aldus buitencontractueel kan worden geacht.",
+      "relevantFactualContext": "De discussie betrof de juridische kwalificatie van de diefstalschade van trailer en lading terwijl deze zich voordeed tijdens bewaring door de stuwadoor op het terrein bestemd voor stuwing."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-011",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1146",
+      "provisionNumberKey": "1146",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof behandelt artikel 1146 binnen het kader dat contractuele verplichtingen primair de rechtsverhouding bepalen; het benadrukt dat een derde alleen aanspraak kan maken indien de feiten wijzen op een afzonderlijke onrechtmatige daad die niet enkel de uitvoering van de contractuele verbintenis betreft.",
+      "relevantFactualContext": "De hoofdvervoerder en de verhuurder beriepen zich op hun contractuele betrekkingen met tussenkomst van commissionair en vervoerders; het Hof onderzocht of de stuwadoor een aparte fout jegens derden beging."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-012",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1147",
+      "provisionNumberKey": "1147",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof plaatst artikel 1147 in de context dat de inhoud van contractuele verbintenissen en de concrete uitvoering daarvan bepalen of derden een onafhankelijke vordering hebben; alleen waar aantoonbaar een algemene zorgvuldigheidsnorm is geschonden die meer is dan louter contractuele slechte uitvoering, ontstaat een extra-contractuele aansprakelijkheid tegenover derden.",
+      "relevantFactualContext": "De feiten betroffen aflevering van een 'interchange receipt', stalling van trailer op terrein van Sea Ro Terminal en daaropvolgende diefstal; vaststelling of dat gedrag een zelfstandige zorgvuldigheidsnorm schond was beslissend."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-013",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1165",
+      "provisionNumberKey": "1165",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof ziet artikel 1165 als relevant voor de toetsing van aansprakelijkheid en schadeberekening in verbintenissenrecht: het benadrukt dat de aard van de geleden schade en haar relatie tot contractuele verplichtingen bepalend is voor de openbaarheid van vorderingen door derden en voor de vraag of schade buitencontractueel is.",
+      "relevantFactualContext": "De kernvraag was of de schade aan trailer en lading een afzonderlijke schadepost vertegenwoordigde die losstaat van de contractuele verplichtingen van vervoerders en stuwadoor."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-014",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1382",
+      "provisionNumberKey": "1382",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof interpreteert artikel 1382 als grondslag voor extra-contractuele aansprakelijkheid: een uitvoeringsagent kan op grond van 1382 aansprakelijk worden gehouden indien er een fout bestaat die de algemene zorgvuldigheidsnorm schendt en indien die fout schade heeft veroorzaakt die niet louter het gevolg is van gebrekkige contractuele uitvoering; fout, schade en causaal verband blijven de vereisten.",
+      "relevantFactualContext": "Sea Ro Terminal trad op als uitvoeringsagent van de zeevervoerder; de trailer en lading werden op haar terrein opgesteld en vervolgens gestolen, hetgeen de vraag opriep of er een onrechtmatige daad los van contractuele wanprestatie bestond."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-015",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1383",
+      "provisionNumberKey": "1383",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof vermeldt artikel 1383 in de systematiek van extra-contractuele aansprakelijkheid en benadrukt dat bewijs van de fout en het veroorzaakte nadeel vereist is; bij aanspraken van derden moet worden beoordeeld of de bewezen fout een schending van de algemene zorgvuldigheidsnorm is en niet louter een gevolg van contractuele wanprestatie.",
+      "relevantFactualContext": "Eiseressen stelden dat de stuwadoor haar verplichtingen naliet en aldus een afzonderlijke fout beging; het Hof vroeg bewijs dat de schade van derden anders was dan die uit contractuele tekortkoming."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-016",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1384",
+      "provisionNumberKey": "1384",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Conform artikel 1384 verklaart het Hof dat aansprakelijkheid voor derden kan bestaan onder de voorwaarden van de onrechtmatige daad; het benadrukt dat een uitvoeringsagent slechts buitencontractueel aansprakelijk is indien zijn fout de algemene zorgvuldigheidsnorm overtreedt en de schade zich onderscheidt van de loutere uitvoeringstekortkoming.",
+      "relevantFactualContext": "De zaak draaide om de vraag of de stuwadoor tegenover de verhuurster van de trailer een autonome buitencontractuele aansprakelijkheid had wegens verlies van trailer en lading tijdens bewaring."
+    },
+    {
+      "provisionId": null,
+      "parentActId": null,
+      "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-017",
+      "internalParentActId": "ACT-ECLI:BE:CASS:20010601.5-002",
+      "provisionNumber": "artikel 1283",
+      "provisionNumberKey": "1283",
+      "parentActType": "WETBOEK",
+      "parentActName": "Burgerlijk Wetboek (BW)",
+      "parentActDate": null,
+      "parentActNumber": null,
+      "provisionInterpretation": "Het Hof voert artikel 1283 aan in verband met buitencontractuele aansprakelijkheid en het bewijs van fout en schade; het bevestigt dat een uitvoeringsagent door derden enkel aansprakelijk kan worden gesteld op extra-contractuele grondslag indien een algemene zorgvuldigheidsnorm is geschonden en de daardoor veroorzaakte schade niet beperkt blijft tot de regime van contractuele wanprestatie.",
+      "relevantFactualContext": "Feitelijke gegeven: de trailer werd op 16 februari 1988 op het terrein van Sea Ro Terminal geplaatst in afwachting van stuwing en werd later gestolen; vaststelling of die feiten een zelfstandige buitengerechtelijke aansprakelijkheid opleveren was bepalend."
+    }
+  ],
+  "citedDecisions": [
+    {
+      "decisionId": null,
+      "decisionSequence": 1,
+      "courtJurisdictionCode": "BE",
+      "courtName": "Hof van Beroep te Gent",
+      "date": "1998-05-08",
+      "caseNumber": null,
+      "ecli": null,
+      "treatment": "CITED",
+      "type": "PROCEDURAL",
+      "internalDecisionId": "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-001"
+    },
+    {
+      "decisionId": null,
+      "decisionSequence": 2,
+      "courtJurisdictionCode": "BE",
+      "courtName": "Rechtbank van Koophandel te Brugge",
+      "date": "1989-02-14",
+      "caseNumber": null,
+      "ecli": null,
+      "treatment": "CITED",
+      "type": "PROCEDURAL",
+      "internalDecisionId": "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-002"
+    },
+    {
+      "decisionId": null,
+      "decisionSequence": 3,
+      "courtJurisdictionCode": "BE",
+      "courtName": "Rechtbank van Koophandel te Oudenaarde",
+      "date": "1989-06-20",
+      "caseNumber": null,
+      "ecli": null,
+      "treatment": "CITED",
+      "type": "PROCEDURAL",
+      "internalDecisionId": "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-003"
+    },
+    {
+      "decisionId": null,
+      "decisionSequence": 4,
+      "courtJurisdictionCode": "BE",
+      "courtName": "Rechtbank van Koophandel te Brugge",
+      "date": "1993-03-09",
+      "caseNumber": null,
+      "ecli": null,
+      "treatment": "CITED",
+      "type": "PROCEDURAL",
+      "internalDecisionId": "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-004"
+    },
+    {
+      "decisionId": null,
+      "decisionSequence": 5,
+      "courtJurisdictionCode": "BE",
+      "courtName": "Cass.",
+      "date": "1990-12-24",
+      "caseNumber": null,
+      "ecli": null,
+      "treatment": "FOLLOWED",
+      "type": "PRECEDENT",
+      "internalDecisionId": "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-005"
+    },
+    {
+      "decisionId": null,
+      "decisionSequence": 6,
+      "courtJurisdictionCode": "BE",
+      "courtName": "Cass.",
+      "date": "1987-04-24",
+      "caseNumber": null,
+      "ecli": null,
+      "treatment": "FOLLOWED",
+      "type": "PRECEDENT",
+      "internalDecisionId": "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-006"
+    }
+  ],
+  "customKeywords": [
+    "Aansprakelijkheidsrecht",
+    "diefstal trailer",
+    "lading tapijten",
+    "stuwadoor terrein",
+    "huur trailer",
+    "ontvankelijkheid incidenteel beroep",
+    "uitvoeringsagent aansprakelijkheid",
+    "derdenaansprakelijkheid",
+    "vrijwaring tussenkomst",
+    "gedeeltelijke vernietiging"
+  ],
+  "legalTeachings": [
+    {
+      "teachingId": "TEACH-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+      "text": "Bij incidenteel beroep stelt artikel 1054 Rv dat een gedaagde in hoger beroep te allen tijde incidenteel beroep kan instellen tegen partijen die in het geding zijn, maar deze hoedanigheid veronderstelt dat er tegen die gedaagde een vordering bestaat; een partij tegen wie de appellant niets vordert, kan niet als gedaagde in hoger beroep worden beschouwd en heeft geen zelfstandig recht op incidenteel beroep tenzij een andere procesrelatie (bv. incidenteel appellanten) wél een vordering tegen haar openbaart.",
+      "courtVerbatim": "Overwegende dat, krachtens artikel 1054, eerste lid, van het Gerechtelijk Wetboek, de gedaagde in hoger beroep te allen tijde incidenteel beroep kan instellen tegen alle partijen die in het geding zijn voor de rechter in hoger beroep ; Dat een partij van wie door diegene die het hoger beroep heeft ingesteld niets wordt gevorderd, niet kan worden beschouwd als een gedaagde in hoger beroep die incidenteel beroep kan instellen ; Dat evenwel als gedaagde in hoger beroep kan beschouwd worden zowel de gedaagde tegen wie een hoofdberoep is gericht als degene die gedaagd werd door een andere gedaagde in hoger beroep, appellant op incidenteel beroep ; dat in elk geval vereist is dat van de gedaagde in hoger beroep die incidenteel beroep instelt iets wordt gevorderd ;",
+      "courtVerbatimLanguage": "NL",
+      "factualTrigger": "Van toepassing bij beoordeling van de ontvankelijkheid van een incidenteel beroep in hoger beroep wanneer partijen meervoudig betrokken zijn en betwist wordt of een partij als gedaagde in hoger beroep kan gelden.",
+      "relevantFactualContext": "In het geding had één partij hoofdberoep ingesteld zonder tegen bepaalde eiseressen een vordering te richten; andere partijen stelden incidenteel beroep in, en het hof verklaarde het incidenteel beroep van de eiseressen tegenover bepaalde verweersters niet-ontvankelijk omdat tegen hen door de hoofdappellant niets werd gevorderd.",
+      "principleType": "PROCEDURAL_RULE",
+      "legalArea": "PROCEDURAL_LAW",
+      "hierarchicalRelationships": {
+        "refinesParentPrinciple": null,
+        "refinedByChildPrinciples": [],
+        "exceptionToPrinciple": null,
+        "exceptedByPrinciples": [],
+        "conflictsWith": []
+      },
+      "precedentialWeight": {
+        "courtLevel": "CASSATION",
+        "binding": true,
+        "clarity": "EXPLICIT",
+        "novelPrinciple": false,
+        "confirmsExistingDoctrine": true,
+        "distinguishesPriorCase": false
+      },
+      "relatedLegalIssuesId": [],
+      "relatedCitedProvisionsId": [
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-003"
+      ],
+      "relatedCitedDecisionsId": [
+        "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+        "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-006"
+      ],
+      "sourceAuthor": "AI_GENERATED"
+    },
+    {
+      "teachingId": "TEACH-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+      "text": "De rechter mag ambtshalve rechtsgronden aanvullen maar alleen binnen strikte grenzen: hij mag geen betwisting inroepen die partijen bij conclusie hebben uitgesloten, mag zich enkel steunen op elementen die partijen regelmatig hebben voorgelegd, mag het voorwerp of de oorzaak van de vordering niet wijzigen en moet steeds het recht van verdediging eerbiedigen; het ambtshalve aanvoeren van een nieuw rechtsmotief zonder heropening van de debatten kan het recht van verdediging en de procesautonomie schenden en leidt tot ongeldigheid van die motivering.",
+      "courtVerbatim": "Overwegende dat de rechter de door de partijen aangevoerde redenen ambtshalve mag aanvullen, op voorwaarde echter dat hij geen betwisting opwerpt waarvan de partijen bij conclusie het bestaan hebben uitgesloten, dat hij enkel steunt op elementen die hem regelmatig zijn voorgelegd, dat hij het voorwerp, noch de oorzaak van de vordering wijzigt en dat hij daarbij het recht van verdediging van de partijen eerbiedigt ; het ambtshalve aanvoeren van een nieuw rechtsmotief zonder heropening van de debatten het recht van verdediging en de procesautonomie kan schenden.",
+      "courtVerbatimLanguage": "NL",
+      "factualTrigger": "Van toepassing wanneer een appelrechter ambtshalve nieuwe rechtsgronden overweegt of toepast bij de beoordeling van ontvankelijkheid of inhoudelijke vordering zonder dat partijen hierover zijn gehoord.",
+      "relevantFactualContext": "Het hof steunde een deel van zijn ontvankelijkheidsbeslissing op een ambtshalve opgeworpen rechtsgrond jegens één verweerster zonder de debatten te heropenen, waardoor eisers geen gelegenheid hadden tot verweer, wat het cassatiehof onrechtmatig achtte.",
+      "principleType": "PROCEDURAL_RULE",
+      "legalArea": "PROCEDURAL_LAW",
+      "hierarchicalRelationships": {
+        "refinesParentPrinciple": null,
+        "refinedByChildPrinciples": [],
+        "exceptionToPrinciple": null,
+        "exceptedByPrinciples": [],
+        "conflictsWith": []
+      },
+      "precedentialWeight": {
+        "courtLevel": "CASSATION",
+        "binding": true,
+        "clarity": "EXPLICIT",
+        "novelPrinciple": false,
+        "confirmsExistingDoctrine": false,
+        "distinguishesPriorCase": false
+      },
+      "relatedLegalIssuesId": [],
+      "relatedCitedProvisionsId": [
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-004"
+      ],
+      "relatedCitedDecisionsId": [],
+      "sourceAuthor": "AI_GENERATED"
+    },
+    {
+      "teachingId": "TEACH-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+      "text": "Een uitvoeringsagent (stuwadoor) die optreedt voor rekening van een vervoerder kan tegenover derden slechts buitencontractueel aansprakelijk worden gesteld indien de hem ten laste gelegde fout een schending vormt van de algemene zorgvuldigheidsnorm en indien de daardoor veroorzaakte schade zich onderscheidt van de loutere contractuele tekortkoming; het loutere feit dat schade voortvloeit uit een contractuele wanprestatie sluit buitencontractuele aansprakelijkheid niet bij voorbaat uit, maar vereist bewijs van een zelfstandige onrechtmatige daad en van andere dan contractuele schade.",
+      "courtVerbatim": "Eens de 'interchange receipt' door de stuwadoor afgeleverd voor rekening van de zeevervoerder, eens de trailer met zijn lading met het oog op verscheping gestationeerd op het daartoe door de stuwadoor voorbehouden terrein, is de stuwadoor als enige aansprakelijk voor de trailer en de lading en dit tot op het ogenblik dat deze in het aangewezen schip gestuwd zijn. De stuwadoor, die in afwachting van de stuwing instaat voor de lading, is de uitvoeringsagent van de zeevervoerder (Kent Lines) en kan enkel door derden worden aangesproken in de mate dat de fout en de schade niet louter contractueel zijn. Het feit dat het niet naleven van de voorzichtigheidsplicht die rust op iedere burger, ook een inbreuk uitmaakt op een contractuele verplichting, niet uitsluit dat de aansprakelijke een buitencontractuele aansprakelijkheid oploopt voor de schade veroorzaakt aan derden met wie hij niet contracteerde ; het feit dat de schade van de derde voortvloeit uit een contractuele wanprestatie, zij het als toevallig gevolg, niet belet dat de aansprakelijke hiervoor tegenover de derde aansprakelijk kan worden gesteld ; de uitvoeringsagent, die optreedt om een contractuele verbintenis van een partij uit te voeren, weliswaar enkel buitencontractueel aansprakelijk kan gesteld worden, indien de hem verweten fout de schending uitmaakt, niet van de contractueel aangegane verbintenis, doch van de eenieder opgelegde zorgvuldigheidsverplichting, en indien die fouten andere dan een louter uit de gebrekkige uitvoering van het contract ontstane schade heeft veroorzaakt ;",
+      "courtVerbatimLanguage": "NL",
+      "factualTrigger": "Van toepassing wanneer een uitvoeringsagent wordt aangesproken door derden voor schade die optrad tijdens uitvoering van een contractuele taak en de vraag rijst of de vordering buitencontractueel ontvankelijk is.",
+      "relevantFactualContext": "De trailer werd voor verscheping op het terrein van de stuwadoor geplaatst en later gestolen; eisers betoogden een rechtstreekse buitencontractuele vordering tegen de stuwadoor, terwijl het hof oordeelde dat niet was aangetoond dat de schade van derden zich onderscheidde van de contractuele tekortkoming.",
+      "principleType": "APPLICATION_STANDARD",
+      "legalArea": "CIVIL_LIABILITY",
+      "hierarchicalRelationships": {
+        "refinesParentPrinciple": null,
+        "refinedByChildPrinciples": [],
+        "exceptionToPrinciple": null,
+        "exceptedByPrinciples": [],
+        "conflictsWith": []
+      },
+      "precedentialWeight": {
+        "courtLevel": "CASSATION",
+        "binding": true,
+        "clarity": "EXPLICIT",
+        "novelPrinciple": false,
+        "confirmsExistingDoctrine": false,
+        "distinguishesPriorCase": false
+      },
+      "relatedLegalIssuesId": [],
+      "relatedCitedProvisionsId": [
+        "ART-ECLI:BE:CASS:20010601.5-005",
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-007",
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+        "ART-ECLI:BE:CASS:2001:ARR.20010601.5-009",
+        "ART-ECLI:BE:CASS:20010601.5-010",
+        "ART-ECLI:BE:CASS:20010601.5-011",
+        "ART-ECLI:BE:CASS:20010601.5-012",
+        "ART-ECLI:BE:CASS:20010601.5-013",
+        "ART-ECLI:BE:CASS:20010601.5-014",
+        "ART-ECLI:BE:CASS:20010601.5-015",
+        "ART-ECLI:BE:CASS:20010601.5-016",
+        "ART-ECLI:BE:CASS:20010601.5-017"
+      ],
+      "relatedCitedDecisionsId": [],
+      "sourceAuthor": "AI_GENERATED"
+    }
+  ],
+  "microSummary": "De eisers, twee vennootschappen als hoofdvervoerder en verhuurder van een trailer, vorderen vergoeding wegens diefstal van trailer en lading tegen meerdere vennootschappen waaronder de stuwadoor en de bewakingsvennootschap. Het Hof van Cassatie vernietigt het bestreden arrest gedeeltelijk: het annuleert de beslissing dat de vordering van de verhuurder tegen de stuwadoor niet-ontvankelijk zou zijn en de uitspraak over de tussenkomst van de stuwadoor tegenover de bewakingsvennootschap, verklaart het arrest bindend voor bepaalde verweerders en verwijst de zaak terug naar het hof van beroep te Antwerpen. Kernpunt: een stuwadoor die als uitvoeringsagent optreedt kan onder voorwaarden ook op extra-contractuele grond jegens derden aansprakelijk worden gehouden.",
+  "relatedCitationsLegalProvisions": {
+    "citedProvisions": [
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-036",
+            "relevantSnippet": "schending van de artikelen 774, tweede lid, 1054, eerste lid, 1056, 4°, en 1138, 2°, van het Gerechtelijk Wetboek, waarin het algemeen rechtsbeginsel van de autonomie van de procespartijen is neergelegd, en van het algemeen rechtsbeginsel van het recht van verdediging, doordat het Hof van Beroep te Gent het incidenteel beroep van de eiseressen gericht tegen eerste en tweede verweersters niet ontvankelijk verklaart op grond van de volgende redengeving :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-038",
+            "relevantSnippet": "zodat de appèlrechters, door hun beslissing te steunen op deze ambtshalve opgeworpen rechtsgrond, minstens in zoverre het ging om eerste verweerster, zonder de debatten te heropenen om de eiseressen in de gelegenheid te stellen hierover verweer te voeren, het recht van verdediging van de eiseressen miskennen (schending van het algemeen rechtsbeginsel van het recht van verdediging) en artikel 774, tweede lid, van het Gerechtelijk Wetboek schenden, alsmede artikel 1138, 2°, van het Gerechtelijk"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-004"
+        ],
+        "relatedInternalDecisionsId": [
+          "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-006"
+        ]
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-036",
+            "relevantSnippet": "schending van de artikelen 774, tweede lid, 1054, eerste lid, 1056, 4°, en 1138, 2°, van het Gerechtelijk Wetboek, waarin het algemeen rechtsbeginsel van de autonomie van de procespartijen is neergelegd, en van het algemeen rechtsbeginsel van het recht van verdediging, doordat het Hof van Beroep te Gent het incidenteel beroep van de eiseressen gericht tegen eerste en tweede verweersters niet ontvankelijk verklaart op grond van de volgende redengeving :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-038",
+            "relevantSnippet": "terwijl, eerste onderdeel, overeenkomstig artikel 1054, eerste lid, van het Gerechtelijk Wetboek, de gedaagde in hoger beroep te allen tijde incidenteel beroep kan instellen tegen alle partijen die in het geding zijn voor de rechter in hoger beroep;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-040",
+            "relevantSnippet": "Overwegende dat, krachtens artikel 1054, eerste lid, van het Gerechtelijk Wetboek, de gedaagde in hoger beroep te allen tijde incidenteel beroep kan instellen tegen alle partijen die in het geding zijn voor de rechter in hoger beroep;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-041",
+            "relevantSnippet": "Dat een partij van wie door diegene die het hoger beroep heeft ingesteld niets wordt gevorderd, niet kan worden beschouwd als een gedaagde in hoger beroep die incidenteel beroep kan instellen;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-042",
+            "relevantSnippet": "Dat evenwel als gedaagde in hoger beroep kan beschouwd worden zowel de gedaagde tegen wie een hoofdberoep is gericht als degene die gedaagd werd door een andere gedaagde in hoger beroep, appellant op incidenteel beroep; dat in elk geval vereist is dat van de gedaagde in hoger beroep die incidenteel beroep instelt iets wordt gevorderd;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-043",
+            "relevantSnippet": "Overwegende dat uit het arrest blijkt dat het hoofdberoep van de bewakingsfirma NV Group 4 Securitas werd ingesteld tegen alle procespartijen in eerste aanleg, waaronder de beide eiseressen, maar dit enkel tot strekking had de tegen haar gerichte vordering tot vrijwaring van de stuwadoor NV Sea Ro Terminal te horen afwijzen; dat uit het arrest evenwel eveneens blijkt dat de NV Sea Ro Terminal een ontvankelijk incidenteel beroep instelde tegen de beide eiseressen, met wie zij een geschil had;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-044",
+            "relevantSnippet": "Overwegende dat de appèlrechters hun oordeel dat het incidenteel hoger beroep van de eiseressen tegen de NV Zeemar en tegen de NV Macotruck niet ontvankelijk is uitsluitend laten rusten, zonder op dit punt te worden bekritiseerd, op de zelfstandige reden dat de hoofdappellant, de NV Group 4 Securitas, niets had gevorderd in de akte van hoger beroep tegen de eiseressen;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-045",
+            "relevantSnippet": "Overwegende dat het onderdeel vermeldt dat de eiseressen de hoedanigheid kregen van gedaagde in hoger beroep, niet door het hoger beroep tegen hen ingesteld door de NV Group 4 Securitas, maar wel door het incidenteel beroep van de NV Sea Ro Terminal; dat het geen kritiek uitoefent op het feit dat de appèlrechters ten onrechte hun beoordeling beperkt hebben tot de reeds vermelde processuele relatie;"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-004"
+        ],
+        "relatedInternalDecisionsId": [
+          "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-006"
+        ]
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-036",
+            "relevantSnippet": "schending van de artikelen 774, tweede lid, 1054, eerste lid, 1056, 4°, en 1138, 2°, van het Gerechtelijk Wetboek, waarin het algemeen rechtsbeginsel van de autonomie van de procespartijen is neergelegd, en van het algemeen rechtsbeginsel van het recht van verdediging, doordat het Hof van Beroep te Gent het incidenteel beroep van de eiseressen gericht tegen eerste en tweede verweersters niet ontvankelijk verklaart op grond van de volgende redengeving :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-038",
+            "relevantSnippet": "zodat de appèlrechters, door hun beslissing te steunen op deze ambtshalve opgeworpen rechtsgrond, minstens in zoverre het ging om eerste verweerster, zonder de debatten te heropenen om de eiseressen in de gelegenheid te stellen hierover verweer te voeren, het recht van verdediging van de eiseressen miskennen ... en artikel 1138, 2°, van het Gerechtelijk Wetboek schenden;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-044",
+            "relevantSnippet": "Overwegende dat de appèlrechters hun oordeel dat het incidenteel hoger beroep van de eiseressen tegen de NV Zeemar en tegen de NV Macotruck niet ontvankelijk is uitsluitend laten rusten, zonder op dit punt te worden bekritiseerd, op de zelfstandige reden dat de hoofdappellant, de NV Group 4 Securitas, niets had gevorderd in de akte van hoger beroep tegen de eiseressen;"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-004"
+        ],
+        "relatedInternalDecisionsId": [
+          "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "DEC-ECLI:BE:CASS:2001:ARR.20010601.5-006"
+        ]
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-004",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-036",
+            "relevantSnippet": "schending van de artikelen 774, tweede lid, 1054, eerste lid, 1056, 4°, en 1138, 2°, van het Gerechtelijk Wetboek, waarin het algemeen rechtsbeginsel van de autonomie van de procespartijen is neergelegd, en van het algemeen rechtsbeginsel van het recht van verdediging, doordat het Hof van Beroep te Gent het incidenteel beroep van de eiseressen gericht tegen eerste en tweede verweersters niet ontvankelijk verklaart op grond van de volgende redengeving :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-038",
+            "relevantSnippet": "zodat de appèlrechters, door hun beslissing te steunen op deze ambtshalve opgeworpen rechtsgrond, minstens in zoverre het ging om eerste verweerster, zonder de debatten te heropenen om de eiseressen in de gelegenheid te stellen hierover verweer te voeren, het recht van verdediging van de eiseressen miskennen ... en artikel 774, tweede lid, van het Gerechtelijk Wetboek schenden, alsmede artikel 1138, 2°, van het Gerechtelijk Wetboek,"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-004",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-003"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-055",
+            "relevantSnippet": "7. Rijst de vraag naar de ontvankelijkheid van de vordering van de hoofdvervoerder jegens (derde verweerster). Laatstgenoemde heeft ten deze gehandeld als stuwadoor van en voor rekening van de rederij Kent Lines, hetgeen blijkt en bewezen wordt door de voorliggende stukken (cf. o.m. stuk 2 dossier (derde verweerster))."
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "terwijl het feit dat het niet naleven van de voorzichtigheidsplicht die rust op iedere burger, ook een inbreuk uitmaakt op een contractuele verplichting, niet uitsluit dat de aansprakelijke een buitencontractuele aansprakelijkheid oploopt voor de schade veroorzaakt aan derden met wie hij niet contracteerde; het feit dat de schade van de derde voortvloeit uit een contractuele wanprestatie, zij het als toevallig gevolg, niet belet dat de aansprakelijke hiervoor tegenover de derde aansprakelijk kan"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:20010601.5-006",
+          "ART-ECLI:BE:CASS:20010601.5-007",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-006",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "terwijl het feit dat het niet naleven van de voorzichtigheidsplicht die rust op iedere burger, ook een inbreuk uitmaakt op een contractuele verplichting, niet uitsluit dat de aansprakelijke een buitencontractuele aansprakelijkheid oploopt voor de schade veroorzaakt aan derden met wie hij niet contracteerde; het feit dat de schade van de derde voortvloeit uit een contractuele wanprestatie, zij het als toevallig gevolg, niet belet dat de aansprakelijke hiervoor tegenover de derde aansprakelijk kan"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-006",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-007",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-007",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "de eiseressen te dezen derde verweerster in hun conclusie aansprakelijk stelden op grond van de regels van buitencontractuele aansprakelijkheid; de eiseressen betoogden dat derde verweerster niet de uitvoeringsagent was van hun medecontractant (syntheseconclusie van de eiseressen, blz. 8-9); door de appèlrechters wordt vastgesteld dat derde verweerster optrad als uitvoeringsagent van de zeevervoerder, de NV Kent Lines;"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-007",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-008",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "7. Rijst de vraag naar de ontvankelijkheid van de vordering van de hoofdvervoerder jegens (derde verweerster). Laatstgenoemde heeft ten deze gehandeld als stuwadoor van en voor rekening van de rederij Kent Lines, hetgeen blijkt en bewezen wordt door de voorliggende stukken"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-008",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-007",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-009",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "De vordering van de hoofdvervoerder (eerste eiseres) jegens de stuwadoor is ten deze derhalve niet ontvankelijk. 8. De eigenares van de verdwenen trailer (tweede eiseres) stelt dat zij als derde, vreemd aan de vervoerovereenkomst, een rechtstreekse aquiliaanse vordering heeft t.a.v. (derde verweerster)."
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-009",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-007",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-010",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "De vordering van de hoofdvervoerder (eerste eiseres) jegens de stuwadoor is ten deze derhalve niet ontvankelijk. ... De uitvoeringsagent, die optreedt om een contractuele verbintenis van een partij uit te voeren, weliswaar enkel buitencontractueel aansprakelijk kan gesteld worden, indien de hem verweten fout de schending uitmaakt, niet van de contractueel aangegane verbintenis, doch van de eenieder opgelegde zorgvuldigheidsverplichting,"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-007",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-008",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-011",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "De uitvoeringsagent, die optreedt om een contractuele verbintenis van een partij uit te voeren, door de medecontractant van die partij op extra-contractuele grondslag enkel aansprakelijk kan worden gesteld indien de hem ten laste gelegde fout een tekortkoming uitmaakt, niet van de contractueel aangegane verbintenis, maar aan de algemene zorgvuldigheidsnorm"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+          "ART-ECLI:BE:CASS:20010601.5-009"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-012",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "De vordering van de hoofdvervoerder (eerste eiseres) jegens de stuwadoor is ten deze derhalve niet ontvankelijk. ... Ook hier dient dan ook besloten dat deze vordering niet toelaatbaar is vermits niet aangetoond wordt en ook niet kan worden aangetoond dat de schade, die de eigenaar - verhuurder van de trailer als derde lijdt, een andere schade is dan deze die het gevolg is van de contractuele fout"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-006",
+          "ART-ECLI:BE:CASS:20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-008",
+          "ART-ECLI:BE:CASS:20010601.5-007"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-013",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "De uitvoeringsagent, die optreedt om een contractuele verbintenis van een partij uit te voeren, weliswaar enkel buitencontractueel aansprakelijk kan gesteld worden, indien de hem verweten fout de schending uitmaakt, niet van de contractueel aangegane verbintenis, doch van de eenieder opgelegde zorgvuldigheidsverplichting, en indien die fouten andere dan een louter uit de gebrekkige uitvoering van het contract ontstane schade heeft veroorzaakt;"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-016",
+          "ART-ECLI:BE:CASS:20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-008",
+          "ART-ECLI:BE:CASS:20010601.5-007",
+          "ART-ECLI:BE:CASS:20010601.5-006"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-014",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "de eiseressen te dezen derde verweerster in hun conclusie aansprakelijk stelden op grond van de regels van buitencontractuele aansprakelijkheid; de eiseressen betoogden dat derde verweerster niet de uitvoeringsagent was van hun medecontractant (syntheseconclusie van de eiseressen, blz. 8-9); door de appèlrechters wordt vastgesteld dat derde verweerster optrad als uitvoeringsagent van de zeevervoerder, de NV Kent Lines; de appèlrechters echter niet vaststellen dat de NV Kent Lines de medecontract"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-060",
+            "relevantSnippet": "Overwegende dat de uitvoeringsagent die optreedt om een contractuele verbintenis van een partij uit te voeren, door de medecontractant van die partij op extra-contractuele grondslag enkel aansprakelijk kan worden gesteld indien de hem ten laste gelegde fout een tekortkoming uitmaakt, niet van de contractueel aangegane verbintenis, maar aan de algemene zorgvuldigheidsnorm en indien deze fout andere dan aan de slechte uitvoering te wijten schade heeft veroorzaakt;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-061",
+            "relevantSnippet": "Overwegende dat de appèlrechters vaststellen dat :"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-016",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-008",
+          "ART-ECLI:BE:CASS:20010601.5-007",
+          "ART-ECLI:BE:CASS:20010601.5-006",
+          "ART-ECLI:BE:CASS:2001:ARR.20010601.5-005"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-015",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "Het feit dat het niet naleven van de voorzichtigheidsplicht die rust op iedere burger, ook een inbreuk uitmaakt op een contractuele verplichting, niet uitsluit dat de aansprakelijke een buitencontractuele aansprakelijkheid oploopt voor de schade veroorzaakt aan derden met wie hij niet contracteerde; het feit dat de schade van de derde voortvloeit uit een contractuele wanprestatie, zij het als toevallig gevolg, niet belet dat de aansprakelijke hiervoor tegenover de derde aansprakelijk kan worden"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-016",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-008",
+          "ART-ECLI:BE:CASS:20010601.5-007",
+          "ART-ECLI:BE:CASS:20010601.5-006",
+          "ART-ECLI:BE:CASS:20010601.5-005"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-016",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-054",
+            "relevantSnippet": "schending van de artikelen 1121, 1134, 1135, 1136, 1137, 1142, 1146, 1147, 1165, 1382, 1383 en 1384 van het Burgerlijk Wetboek, doordat de appèlrechters de vordering van de eiseressen tegen de derde verweerster niet ontvankelijk verklaren op grond van de volgende overwegingen :"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "de uitvoeringsagent, die optreedt om een contractuele verbintenis van een partij uit te voeren, weliswaar enkel buitencontractueel aansprakelijk kan gesteld worden, indien de hem verweten fout de schending uitmaakt, niet van de contractueel aangegane verbintenis, doch van de eenieder opgelegde zorgvuldigheidsverplichting, en indien die fouten andere dan een louter uit de gebrekkige uitvoering van het contract ontstane schade heeft veroorzaakt;"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-016",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-015",
+          "ART-ECLI:BE:CASS:20010601.5-013",
+          "ART-ECLI:BE:CASS:20010601.5-012",
+          "ART-ECLI:BE:CASS:20010601.5-011",
+          "ART-ECLI:BE:CASS:20010601.5-010",
+          "ART-ECLI:BE:CASS:20010601.5-009",
+          "ART-ECLI:BE:CASS:20010601.5-008",
+          "ART-ECLI:BE:CASS:20010601.5-007",
+          "ART-ECLI:BE:CASS:20010601.5-006",
+          "ART-ECLI:BE:CASS:20010601.5-005"
+        ],
+        "relatedInternalDecisionsId": []
+      },
+      {
+        "internalProvisionId": "ART-ECLI:BE:CASS:20010601.5-017",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "de eiseressen te dezen derde verweerster in hun conclusie aansprakelijk stelden op grond van de regels van buitencontractuele aansprakelijkheid; de eiseressen betoogden dat derde verweerster niet de uitvoeringsagent was van hun medecontractant (syntheseconclusie van de eiseressen, blz. 8-9); door de appèlrechters wordt vastgesteld dat derde verweerster optrad als uitvoeringsagent van de zeevervoerder, de NV Kent Lines; de appèlrechters echter niet vaststellen dat de NV Kent Lines de medecontract"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-060",
+            "relevantSnippet": "Overwegende dat de uitvoeringsagent die optreedt om een contractuele verbintenis van een partij uit te voeren, door de medecontractant van die partij op extra-contractuele grondslag enkel aansprakelijk kan worden gesteld indien de hem ten laste gelegde fout een tekortkoming uitmaakt, niet van de contractueel aangegane verbintenis, maar aan de algemene zorgvuldigheidsnorm en indien deze fout andere dan aan de slechte uitvoering te wijten schade heeft veroorzaakt;"
+          }
+        ],
+        "relatedInternalProvisionsId": [
+          "ART-ECLI:BE:CASS:20010601.5-017",
+          "ART-ECLI:BE:CASS:20010601.5-014",
+          "ART-ECLI:BE:CASS:20010601.5-016"
+        ],
+        "relatedInternalDecisionsId": []
+      }
+    ]
+  },
+  "relatedCitationsLegalTeachings": {
+    "legalTeachings": [
+      {
+        "teachingId": "TEACH-ECLI:BE:CASS:2001:ARR.20010601.5-001",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-038",
+            "relevantSnippet": "terwijl, eerste onderdeel, overeenkomstig artikel 1054, eerste lid, van het Gerechtelijk Wetboek de gedaagde in hoger beroep te allen tijde incidenteel beroep kan instellen tegen alle partijen die in het geding zijn voor de rechter in hoger beroep;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-040",
+            "relevantSnippet": "Overwegende dat, krachtens artikel 1054, eerste lid, van het Gerechtelijk Wetboek, de gedaagde in hoger beroep te allen tijde incidenteel beroep kan instellen tegen alle partijen die in het geding zijn voor de rechter in hoger beroep;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-044",
+            "relevantSnippet": "Overwegende dat de appèlrechters hun oordeel dat het incidenteel hoger beroep van de eiseressen tegen de NV Zeemar en tegen de NV Macotruck niet ontvankelijk is uitsluitend laten rusten, zonder op dit punt te worden bekritiseerd, op de zelfstandige reden dat de hoofdappellant, de NV Group 4 Securitas, niets had gevorderd in de akte van hoger beroep tegen de eiseressen;"
+          }
+        ]
+      },
+      {
+        "teachingId": "TEACH-ECLI:BE:CASS:2001:ARR.20010601.5-002",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-038",
+            "relevantSnippet": "de rechter de door de partijen aangevoerde redenen ambtshalve mag aanvullen, op voorwaarde echter dat hij geen betwisting opwerpt waarvan de partijen bij conclusie het bestaan hebben uitgesloten, dat hij enkel steunt op elementen die hem regelmatig zijn voorgelegd, dat hij het voorwerp, noch de oorzaak van de vordering wijzigt en dat hij daarbij het recht van verdediging van de partijen eerbiedigt ;"
+          }
+        ]
+      },
+      {
+        "teachingId": "TEACH-ECLI:BE:CASS:2001:ARR.20010601.5-003",
+        "citations": [
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-055",
+            "relevantSnippet": "Eens de 'interchange receipt' door de stuwadoor afgeleverd voor rekening van de zeevervoerder, eens de trailer met zijn lading met het oog op verscheping gestationeerd op het daartoe door de stuwadoor voorbehouden terrein, is de stuwadoor als enige aansprakelijk voor de trailer en de lading en dit tot op het ogenblik dat deze in het aangewezen schip gestuwd zijn."
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-056",
+            "relevantSnippet": "terwijl het feit dat het niet naleven van de voorzichtigheidsplicht die rust op iedere burger, ook een inbreuk uitmaakt op een contractuele verplichting, niet uitsluit dat de aansprakelijke een buitencontractuele aansprakelijkheid oploopt voor de schade veroorzaakt aan derden met wie hij niet contracteerde; ... de uitvoeringsagent, die optreedt om een contractuele verbintenis van een partij uit te voeren, weliswaar enkel buitencontractueel aansprakelijk kan gesteld worden, indien de hem verweten"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-060",
+            "relevantSnippet": "Overwegende dat de uitvoeringsagent die optreedt om een contractuele verbintenis van een partij uit te voeren, door de medecontractant van die partij op extra-contractuele grondslag enkel aansprakelijk kan worden gesteld indien de hem ten laste gelegde fout een tekortkoming uitmaakt, niet van de contractueel aangegane verbintenis, maar aan de algemene zorgvuldigheidsnorm en indien deze fout andere dan aan de slechte uitvoering te wijten schade heeft veroorzaakt;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-066",
+            "relevantSnippet": "Overwegende dat de appèlrechters op grond van de door hen gedane vaststellingen niet vermochten te oordelen dat de NV Sea Ro Terminal een uitvoeringsagent was tegenover wie de tweede eiseres niet kan beschikken over een buiten-contractueel vorderingsrecht tegen de derde verweerster;"
+          },
+          {
+            "blockId": "ECLI:BE:CASS:2001:ARR.20010601.5:block-067",
+            "relevantSnippet": "Dat het middel in zoverre gegrond is;\"} ],\"relationshipValidation\":{\"provisionsValidated\":3,\"provisionsNotFoundInCitations\":[\"ART-ECLI:BE:CASS:20010601.5-005\",\"ART-ECLI:BE:CASS:2001:ARR.20010601.5-006\",\"ART-ECLI:BE:CASS:2001:ARR.20010601.5-007\",\"ART-ECLI:BE:CASS:2001:ARR.20010601.5-008\",\"ART-ECLI:BE:CASS:2001:ARR.20010601.5-009\",\"ART-ECLI:BE:CASS:20010601.5-010\",\"ART-ECLI:BE:CASS:2001:ARR.20010601.5-011\",\"ART-ECLI:BE:CASS:20010601.5-012\",\"ART-ECLI:BE:CASS:2001:ARR.20010601.5-013\",\"ART-ECLI:BE:C3"
+          }
+        ]
+      }
+    ]
+  }
+}
