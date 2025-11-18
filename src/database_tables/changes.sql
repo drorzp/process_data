@@ -206,3 +206,21 @@ CREATE INDEX idx_drcltc_decision_id
   ON decision_related_citations_legal_teachings_citations(decision_id);
 CREATE INDEX idx_drcltc_legal_teachings_id 
   ON decision_related_citations_legal_teachings_citations(decision_related_citations_legal_teachings_id);
+
+
+  CREATE TABLE  decision_extracted_references (
+    id serial4 NOT NULL,
+    decision_id INTEGER NOT NULL,
+    url_eu varchar(128)[],
+    url_be varchar(128)[],
+    reference_eu_extracted varchar(128)[],
+    reference_be_verified varchar(128)[],
+    reference_be_extracted varchar(128)[],
+    reference_be_verified_numac varchar(128)[],
+    reference_be_verified_fileNumber varchar(128)[],
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   CONSTRAINT decision_extracted_references_pkey PRIMARY KEY (id)
+  );
+  CREATE INDEX idx_decision_extracted_references_decision_id 
+  ON decision_extracted_references(decision_id);

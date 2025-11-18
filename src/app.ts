@@ -15,8 +15,15 @@ const pool = new Pool({
   password: process.env.PGPASSWORD
 });
 
+function deleteFile(filePath: string) {
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
+    console.log(`File deleted: ${filePath}`);
+  }
+}
+
 // Main async function
-async function main() {
+export async function main() {
   try {
     // Test database connection
     const client = await pool.connect();
@@ -25,34 +32,52 @@ async function main() {
 
     const importedFilesDir = path.join(__dirname, 'imported_files');
 
-    // Read all files from the imported_files directory
-    const files = fs.readdirSync(importedFilesDir);
-    let flag = true;
-    // Loop through each file and process it
-    for (const fileName of files) {
-      try {
-        await processFile(fileName, pool);
-        console.log(fileName)
-      } catch (error) {
-        console.error(`Failed to process file ${fileName}:`, error);
+    // Read all JSON files directly from imported_files (files are flattened)
+    const allEntries = fs.readdirSync(importedFilesDir);
+    const jsonFiles = allEntries.filter(fileName => {
+      const fullPath = path.join(importedFilesDir, fileName);
+      return fs.statSync(fullPath).isFile() && fileName.endsWith('.json');
+    });
+
+    console.log(`Found ${jsonFiles.length} JSON file(s) to process`);
+
+    // for (const fileName of jsonFiles) {
+    //   const sourceFilePath = path.join(importedFilesDir, fileName);
+
+    //   try {
+    //     await processFile(fileName, pool);
+    //     console.log(fileName);
+
+    //     // DELETE processed file if flag is enabled
+    //     const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
+    //     if (shouldDelete) {
+    //       deleteFile(sourceFilePath);
+    //     }
+    //   } catch (error) {
+    //     console.error(`Failed to process file ${fileName}:`, error);
         
-        // Copy failed file to errors folder
-        const sourceFilePath = path.join(importedFilesDir, fileName);
-        const errorsDir = path.join(__dirname, 'errors');
+    //     // Copy failed file to errors folder
+    //     const errorsDir = path.join(__dirname, 'errors');
         
-        // Create errors directory if it doesn't exist
-        if (!fs.existsSync(errorsDir)) {
-          fs.mkdirSync(errorsDir, { recursive: true });
-        }
+    //     // Create errors directory if it doesn't exist
+    //     if (!fs.existsSync(errorsDir)) {
+    //       fs.mkdirSync(errorsDir, { recursive: true });
+    //     }
         
-        const errorFilePath = path.join(errorsDir, fileName);
-        fs.copyFileSync(sourceFilePath, errorFilePath);
-        console.log(`File copied to errors folder: ${errorFilePath}`);
+    //     const errorFilePath = path.join(errorsDir, fileName);
+    //     fs.copyFileSync(sourceFilePath, errorFilePath);
+    //     console.log(`File copied to errors folder: ${errorFilePath}`);
+
+    //     // DELETE original file from imported_files if flag is enabled
+    //     const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
+    //     if (shouldDelete) {
+    //       deleteFile(sourceFilePath);
+    //     }
         
-        // Continue to next file
-        continue;
-      }
-    }
+    //     // Continue to next file
+    //     continue;
+    //   }
+    // }
 
     client.release();
   } catch (error) {
@@ -63,6 +88,3 @@ async function main() {
     console.log('Database connection closed');
   }
 }
-
-// Run the main function
-main();

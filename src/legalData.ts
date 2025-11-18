@@ -111,6 +111,16 @@ interface RelatedCitationsLegalTeachings {
   legalTeachings: TeachingCitation[];
 }
 
+interface ExtractedReferences {
+  url_eu: string[];
+  url_be: string[];
+  reference_eu_extracted: string[];
+  reference_be_verified: string[];
+  reference_be_extracted: string[];
+  reference_be_verified_numac: string[];
+  reference_be_verified_fileNumber: string[];
+}
+
 export interface LegalDecisionData {
   decision_id: string;
   language: string;
@@ -124,4 +134,5 @@ export interface LegalDecisionData {
   microSummary: string;
   relatedCitationsLegalProvisions: RelatedCitationsLegalProvisions;
   relatedCitationsLegalTeachings: RelatedCitationsLegalTeachings;
+  extractedReferences: ExtractedReferences;
 }

@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS decision_cited_provisions;
 DROP TABLE IF EXISTS cited_decisions;
 DROP TABLE IF EXISTS decision_arguments;
 DROP TABLE IF EXISTS decision_requests;
+DROP TABLE IF EXISTS decision_extracted_references;
 DROP TABLE IF EXISTS decision_parties;
 
 -- Remove columns added to decisions1

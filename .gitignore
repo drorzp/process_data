@@ -1,0 +1,4 @@
+src/imported_files/
+node_modules
+src/errors
+dist

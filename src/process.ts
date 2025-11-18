@@ -2,7 +2,7 @@ import { Pool } from 'pg';
 import fs from 'fs';
 import path from 'path';
 import { LegalDecisionData } from './legalData';
-import { insert_decision_legal_teachings, insert_decision_related_citations, insert_decision_related_citations_citations, insert_decisions_cited_provisions, insert_decisions_related_citations_legal_teachings, insert_decisions_related_citations_legal_teachings_citations, insertArguments, insertCitedDecisions, insertParties, insertRequests, updateDecision } from './updateDecisions';
+import { insert_decision_legal_teachings, insert_decision_related_citations, insert_decision_related_citations_citations, insert_decisions_cited_provisions, insert_decisions_related_citations_legal_teachings, insert_decisions_related_citations_legal_teachings_citations, insert_extracted_references, insertArguments, insertCitedDecisions, insertParties, insertRequests, updateDecision } from './updateDecisions';
 // Type definitions for Legal Decision JSON structure
 
 
@@ -86,11 +86,25 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
                  citedProvision.parentActType, 
                  citedProvision.parentActName, 
                  citedProvision.parentActDate,
-                 citedProvision.parentActName,
+                 citedProvision.parentActNumber,
                  citedProvision.provisionInterpretation,
                  citedProvision.relevantFactualContext,
                   pool);
           }
+
+
+        
+            await insert_extracted_references(
+                decisionId  , 
+                jsonData.extractedReferences.url_eu,
+                jsonData.extractedReferences.url_be,
+                 jsonData.extractedReferences.reference_eu_extracted,
+                 jsonData.extractedReferences.reference_be_verified,
+                 jsonData.extractedReferences.reference_be_extracted,
+                 jsonData.extractedReferences.reference_be_verified_numac,
+                 jsonData.extractedReferences.reference_be_verified_fileNumber,
+                  pool);
+        
 
 
         for (const citedProvision of jsonData.relatedCitationsLegalProvisions.citedProvisions) {

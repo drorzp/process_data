@@ -5,12 +5,26 @@ exports.insertRequests = insertRequests;
 exports.insertArguments = insertArguments;
 exports.insertParties = insertParties;
 exports.insertCitedDecisions = insertCitedDecisions;
+exports.insert_extracted_references = insert_extracted_references;
 exports.insert_decisions_cited_provisions = insert_decisions_cited_provisions;
 exports.insert_decision_related_citations = insert_decision_related_citations;
 exports.insert_decision_related_citations_citations = insert_decision_related_citations_citations;
 exports.insert_decision_legal_teachings = insert_decision_legal_teachings;
 exports.insert_decisions_related_citations_legal_teachings = insert_decisions_related_citations_legal_teachings;
 exports.insert_decisions_related_citations_legal_teachings_citations = insert_decisions_related_citations_legal_teachings_citations;
+function truncate(value, maxLength) {
+    if (value === null || value === undefined) {
+        return value;
+    }
+    return value.length > maxLength ? value.slice(0, maxLength) : value;
+}
+function sanitizeText(value) {
+    if (value === null || value === undefined) {
+        return value;
+    }
+    // Remove any NUL characters which PostgreSQL does not accept in text
+    return value.replace(/\u0000/g, '');
+}
 async function updateDecision(id, custom_keywords, micro_summary, citation_reference, facts, court_order, outcome, pool) {
     try {
         const query = `
@@ -164,6 +178,37 @@ async function insertCitedDecisions(decision_id, decision_sequence, court_jurisd
         throw error;
     }
 }
+async function insert_extracted_references(decision_id, url_eu, url_be, reference_eu_extracted, reference_be_verified, reference_be_extracted, reference_be_verified_numac, reference_be_verified_fileNumber, pool) {
+    try {
+        const query = `
+            INSERT INTO decision_extracted_references (decision_id, url_eu, url_be, reference_eu_extracted, reference_be_verified, reference_be_extracted, reference_be_verified_numac, reference_be_verified_fileNumber)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        `;
+        const result = await pool.query(query, [
+            decision_id,
+            url_eu,
+            url_be,
+            reference_eu_extracted,
+            reference_be_verified,
+            reference_be_extracted,
+            reference_be_verified_numac,
+            reference_be_verified_fileNumber
+        ]);
+        // Check if any rows were inserted
+        if (result.rowCount && result.rowCount > 0) {
+            console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
+            return true;
+        }
+        else {
+            console.log(`No decision found with id: ${decision_id}`);
+            return false;
+        }
+    }
+    catch (error) {
+        console.error(`Error inserting parties for decision with id ${decision_id}:`, error);
+        throw error;
+    }
+}
 async function insert_decisions_cited_provisions(decision_id, provision_id, parent_act_id, internal_provision_id, internal_parent_act_id, provision_number, provision_number_key, parent_act_type, parent_act_name, parent_act_date, parent_act_number, provision_interpretation, relevant_factual_context, pool) {
     try {
         const query = `
@@ -196,6 +241,7 @@ async function insert_decisions_cited_provisions(decision_id, provision_id, pare
         }
     }
     catch (error) {
+        console.log(parent_act_number);
         console.error(`Error inserting decisions_cited_provisions for decision with id ${decision_id}:`, error);
         throw error;
     }
@@ -235,11 +281,12 @@ async function insert_decision_related_citations_citations(decision_id, decision
             INSERT INTO decision_related_citations_citations (decision_id, decision_related_citations_id, block_id, relevant_snippet)
             VALUES ($1, $2, $3, $4)
         `;
+        const safe_relevant_snippet = sanitizeText(relevant_snippet);
         const result = await pool.query(query, [
             decision_id,
             decision_related_citations_id,
             block_id,
-            relevant_snippet
+            safe_relevant_snippet
         ]);
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
@@ -360,11 +407,12 @@ async function insert_decisions_related_citations_legal_teachings_citations(deci
           INSERT INTO decision_related_citations_legal_teachings_citations (decision_id, decision_related_citations_legal_teachings_id, block_id, relevant_snippet)
           VALUES ($1, $2, $3, $4)
       `;
+        const safe_relevant_snippet = sanitizeText(relevant_snippet);
         const result = await pool.query(query, [
             decision_id,
             decision_related_citations_legal_teachings_id,
             block_id,
-            relevant_snippet
+            safe_relevant_snippet
         ]);
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
