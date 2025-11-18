@@ -22,15 +22,30 @@ function deleteFile(filePath: string) {
   }
 }
 
+function deleteAllFilesInDirectory(dirPath: string) {
+  if (!fs.existsSync(dirPath)) {
+    return;
+  }
+  
+  const files = fs.readdirSync(dirPath);
+  for (const file of files) {
+    const filePath = path.join(dirPath, file);
+    if (fs.statSync(filePath).isFile()) {
+      fs.unlinkSync(filePath);
+      console.log(`Cleaned up file: ${filePath}`);
+    }
+  }
+  console.log(`All files deleted from ${dirPath}`);
+}
+
 // Main async function
 export async function main() {
+  const importedFilesDir = path.join(__dirname, 'imported_files');
+  
   try {
     // Test database connection
     const client = await pool.connect();
     console.log('Successfully connected to PostgreSQL database');
-
-
-    const importedFilesDir = path.join(__dirname, 'imported_files');
 
     // Read all JSON files directly from imported_files (files are flattened)
     const allEntries = fs.readdirSync(importedFilesDir);
@@ -41,48 +56,53 @@ export async function main() {
 
     console.log(`Found ${jsonFiles.length} JSON file(s) to process`);
 
-    // for (const fileName of jsonFiles) {
-    //   const sourceFilePath = path.join(importedFilesDir, fileName);
+    for (const fileName of jsonFiles) {
+      const sourceFilePath = path.join(importedFilesDir, fileName);
 
-    //   try {
-    //     await processFile(fileName, pool);
-    //     console.log(fileName);
+      try {
+        await processFile(fileName, pool);
+        console.log(fileName);
 
-    //     // DELETE processed file if flag is enabled
-    //     const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
-    //     if (shouldDelete) {
-    //       deleteFile(sourceFilePath);
-    //     }
-    //   } catch (error) {
-    //     console.error(`Failed to process file ${fileName}:`, error);
+        // DELETE processed file if flag is enabled
+        const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
+        if (shouldDelete) {
+          deleteFile(sourceFilePath);
+        }
+      } catch (error) {
+        console.error(`Failed to process file ${fileName}:`, error);
         
-    //     // Copy failed file to errors folder
-    //     const errorsDir = path.join(__dirname, 'errors');
+        // Copy failed file to errors folder
+        const errorsDir = path.join(__dirname, 'errors');
         
-    //     // Create errors directory if it doesn't exist
-    //     if (!fs.existsSync(errorsDir)) {
-    //       fs.mkdirSync(errorsDir, { recursive: true });
-    //     }
+        // Create errors directory if it doesn't exist
+        if (!fs.existsSync(errorsDir)) {
+          fs.mkdirSync(errorsDir, { recursive: true });
+        }
         
-    //     const errorFilePath = path.join(errorsDir, fileName);
-    //     fs.copyFileSync(sourceFilePath, errorFilePath);
-    //     console.log(`File copied to errors folder: ${errorFilePath}`);
+        const errorFilePath = path.join(errorsDir, fileName);
+        fs.copyFileSync(sourceFilePath, errorFilePath);
+        console.log(`File copied to errors folder: ${errorFilePath}`);
 
-    //     // DELETE original file from imported_files if flag is enabled
-    //     const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
-    //     if (shouldDelete) {
-    //       deleteFile(sourceFilePath);
-    //     }
+        // DELETE original file from imported_files if flag is enabled
+        const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
+        if (shouldDelete) {
+          deleteFile(sourceFilePath);
+        }
         
-    //     // Continue to next file
-    //     continue;
-    //   }
-    // }
+        // Continue to next file
+        continue;
+      }
+    }
 
     client.release();
   } catch (error) {
-    console.error('Error:', error);
+   console.error('Error:');
   } finally {
+    // Clean up all remaining files from imported_files
+    const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
+    if (shouldDelete) {
+      deleteAllFilesInDirectory(importedFilesDir);
+    }
     // Disconnect from database
     await pool.end();
     console.log('Database connection closed');

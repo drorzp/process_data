@@ -25,6 +25,8 @@ export async function updateDecision(
   pool: Pool
 ): Promise<boolean> {
   try {
+
+
     const query = `
       UPDATE decisions1 
       SET 
@@ -38,13 +40,17 @@ export async function updateDecision(
       WHERE id = $7
     `;
     
+    const sanitized_facts = sanitizeText(facts);
+    const sanitized_court_order = sanitizeText(court_order);
+    const sanitized_outcome = sanitizeText(outcome);
+
     const result = await pool.query(query, [
       custom_keywords,
       micro_summary,
       citation_reference,
-      facts,
-      court_order,
-      outcome,
+      sanitized_facts,
+      sanitized_court_order,
+      sanitized_outcome,
       id
     ]);
     
@@ -69,10 +75,11 @@ export async function insertRequests(decision_id: number, party_id: string, requ
             VALUES ($1, $2, $3)
         `;
         
+        const sanitized_requests = sanitizeText(requests);
         const result = await pool.query(query, [
            decision_id,
             party_id,
-            requests
+            sanitized_requests
         ]);
         
         // Check if any rows were inserted
@@ -96,11 +103,11 @@ export async function insertArguments(decision_id: number, party_id: string, arg
             INSERT INTO decision_arguments (decision_id, party_id, argument, treatment)
             VALUES ($1, $2, $3, $4)
         `;
-        
+        const sanitized_argument = sanitizeText(argument);
         const result = await pool.query(query, [
            decision_id,
             party_id,
-            argument,
+            sanitized_argument,
             treatment
         ]);
         
@@ -124,11 +131,11 @@ export async function insertParties(decision_id: number, party_id: string, party
             INSERT INTO decision_parties (decision_id, party_id, party_name, party_type, procedural_role)
             VALUES ($1, $2, $3, $4, $5)
         `;
-        
+        const sanitized_party_name = sanitizeText(party_name);
         const result = await pool.query(query, [
            decision_id,
             party_id,
-            party_name,
+            sanitized_party_name,
             party_type,
             procedural_role
         ]);
@@ -404,16 +411,21 @@ export async function insert_decision_legal_teachings(
              source_author)
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24)
         `;
-        
+        const sanitized_relevant_factual_context = sanitizeText(relevant_factual_context);
+        const sanitized_teaching_text = sanitizeText(teaching_text);
+        const sanitized_court_verbatim = sanitizeText(court_verbatim);  
+        const sanitized_factual_trigger = sanitizeText(factual_trigger);  
+        const sanitized_clarity = sanitizeText(clarity);  
+        const sanitized_source_author = sanitizeText(source_author);
   
       const result = await pool.query(query, [
          decision_id,
          teaching_id,
-          teaching_text,
-          court_verbatim,
+          sanitized_teaching_text,
+          sanitized_court_verbatim,
           court_verbatim_language,
-          factual_trigger,
-          relevant_factual_context,
+          sanitized_factual_trigger,
+          sanitized_relevant_factual_context,
           principle_type,
           legal_area,
           refines_parent_principle,
@@ -423,14 +435,14 @@ export async function insert_decision_legal_teachings(
           conflicts_with,
           court_level,
           teaching_binding,
-          clarity,
+          sanitized_clarity,
           novel_principle,
           confirms_existing_doctrine,
           distinguishes_prior_case,
           related_legal_issues_id,
           related_cited_provisions_id,
           related_cited_decisions_id,
-          source_author    
+          sanitized_source_author    
         ]);
         
         // Check if any rows were inserted
