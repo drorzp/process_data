@@ -43,11 +43,12 @@ export async function updateDecision(
     const sanitized_facts = sanitizeText(facts);
     const sanitized_court_order = sanitizeText(court_order);
     const sanitized_outcome = sanitizeText(outcome);
-
+    const sanitized_micro_summary = sanitizeText(micro_summary);
+    const sanitized_citation_reference = sanitizeText(citation_reference);
     const result = await pool.query(query, [
       custom_keywords,
-      micro_summary,
-      citation_reference,
+      sanitized_micro_summary,
+      sanitized_citation_reference,
       sanitized_facts,
       sanitized_court_order,
       sanitized_outcome,
@@ -104,11 +105,12 @@ export async function insertArguments(decision_id: number, party_id: string, arg
             VALUES ($1, $2, $3, $4)
         `;
         const sanitized_argument = sanitizeText(argument);
+        const sanitized_treatment = sanitizeText(treatment);
         const result = await pool.query(query, [
            decision_id,
             party_id,
             sanitized_argument,
-            treatment
+            sanitized_treatment
         ]);
         
         // Check if any rows were inserted
@@ -132,12 +134,13 @@ export async function insertParties(decision_id: number, party_id: string, party
             VALUES ($1, $2, $3, $4, $5)
         `;
         const sanitized_party_name = sanitizeText(party_name);
+        const sanitized_procedural_role = sanitizeText(procedural_role);
         const result = await pool.query(query, [
            decision_id,
             party_id,
             sanitized_party_name,
             party_type,
-            procedural_role
+            sanitized_procedural_role
         ]);
         
         // Check if any rows were inserted
@@ -172,17 +175,20 @@ export async function insertCitedDecisions(
             INSERT INTO cited_decisions(decision_id, decision_sequence, court_jurisdiction_code, court_name, cited_date, case_number, ecli, treatment, cited_type, internal_decision_id)
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
         `;
-        
+        const sanitized_court_name = sanitizeText(court_name);
+        const sanitized_court_jurisdiction_code = sanitizeText(court_jurisdiction_code);
+        const sanitized_cited_type = sanitizeText(cited_type);
+        const sanitized_treatment = sanitizeText(treatment);
         const result = await pool.query(query, [
            decision_id,
             decision_sequence,
-            court_jurisdiction_code,
-            court_name,
+            sanitized_court_jurisdiction_code,
+            sanitized_court_name,
             cited_date,
             case_number,
             ecli,
-            treatment,
-            cited_type,
+            sanitized_treatment,
+            sanitized_cited_type,
             internal_decision_id
         ]);
         
@@ -254,20 +260,28 @@ export async function insert_decisions_cited_provisions(
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
         `;
         
+        const sanitized_provision_interpretation = sanitizeText(provision_interpretation);
+        const sanitized_relevant_factual_context = sanitizeText(relevant_factual_context);
+        const sanitized_parent_act_name = sanitizeText(parent_act_name);
+        const sanitized_parent_act_number = sanitizeText(parent_act_number);
+        const sanitized_provision_number = sanitizeText(provision_number);
+        const sanitized_provision_number_key = sanitizeText(provision_number_key);
+        const sanitized_parent_act_type = sanitizeText(parent_act_type);
+
         const result = await pool.query(query, [
            decision_id,
             provision_id,
             parent_act_id,
             internal_provision_id,
             internal_parent_act_id,
-            provision_number,
-            provision_number_key,
-            parent_act_type,
-            parent_act_name,
+            sanitized_provision_number,
+            sanitized_provision_number_key,
+            sanitized_parent_act_type,
+            sanitized_parent_act_name,
             parent_act_date,
-            parent_act_number,
-            provision_interpretation,
-            relevant_factual_context
+            sanitized_parent_act_number,
+            sanitized_provision_interpretation,
+            sanitized_relevant_factual_context
         ]);
         
         // Check if any rows were inserted
