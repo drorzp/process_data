@@ -57,7 +57,6 @@ export async function updateDecision(
     
     // Check if any rows were updated
     if (result.rowCount && result.rowCount > 0) {
-      console.log(`Successfully updated decision with id: ${id}`);
       return true;
     } else {
       console.log(`No decision found with id: ${id}`);
@@ -85,7 +84,6 @@ export async function insertRequests(decision_id: number, party_id: string, requ
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted requests for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -98,7 +96,6 @@ export async function insertRequests(decision_id: number, party_id: string, requ
 }
 
 export async function insertArguments(decision_id: number, party_id: string, argument: string, treatment: string, pool: Pool): Promise<boolean> {
-  console.log(`Inserting arguments for decision with id: ${decision_id} ${party_id} ${argument} ${treatment}`);
     try {
         const query = `
             INSERT INTO decision_arguments (decision_id, party_id, argument, treatment)
@@ -115,7 +112,6 @@ export async function insertArguments(decision_id: number, party_id: string, arg
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted requests for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -145,7 +141,6 @@ export async function insertParties(decision_id: number, party_id: string, party
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -162,7 +157,7 @@ export async function insertCitedDecisions(
                 decision_sequence: number,
                 court_jurisdiction_code: string, 
                 court_name: string,
-                cited_date: Date, 
+                cited_date: Date | null, 
                 case_number: string| null,  
                 ecli: string | null, 
                 treatment: string, 
@@ -177,6 +172,7 @@ export async function insertCitedDecisions(
         `;
         const sanitized_court_name = sanitizeText(court_name);
         const sanitized_court_jurisdiction_code = sanitizeText(court_jurisdiction_code);
+        const sanitized_case_number = sanitizeText(case_number);
         const sanitized_cited_type = sanitizeText(cited_type);
         const sanitized_treatment = sanitizeText(treatment);
         const result = await pool.query(query, [
@@ -185,7 +181,7 @@ export async function insertCitedDecisions(
             sanitized_court_jurisdiction_code,
             sanitized_court_name,
             cited_date,
-            case_number,
+            sanitized_case_number,
             ecli,
             sanitized_treatment,
             sanitized_cited_type,
@@ -194,7 +190,6 @@ export async function insertCitedDecisions(
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -227,7 +222,6 @@ try {
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -262,6 +256,8 @@ export async function insert_decisions_cited_provisions(
         
         const sanitized_provision_interpretation = sanitizeText(provision_interpretation);
         const sanitized_relevant_factual_context = sanitizeText(relevant_factual_context);
+        const sanitized_internal_parent_act_id = internal_parent_act_id ? sanitizeText(internal_parent_act_id.slice(0, 255)) : null;
+        const sanitized_internal_provision_id = internal_provision_id ? sanitizeText(internal_provision_id.slice(0, 255)) : null;
         const sanitized_parent_act_name = sanitizeText(parent_act_name);
         const sanitized_parent_act_number = sanitizeText(parent_act_number);
         const sanitized_provision_number = sanitizeText(provision_number);
@@ -272,8 +268,8 @@ export async function insert_decisions_cited_provisions(
            decision_id,
             provision_id,
             parent_act_id,
-            internal_provision_id,
-            internal_parent_act_id,
+            sanitized_internal_provision_id,
+            sanitized_internal_parent_act_id,
             sanitized_provision_number,
             sanitized_provision_number_key,
             sanitized_parent_act_type,
@@ -286,7 +282,6 @@ export async function insert_decisions_cited_provisions(
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -322,7 +317,6 @@ export async function insert_decision_related_citations(
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
             const newId = result.rows[0].id;
-            console.log(`Successfully inserted decision_related_citations with id: ${newId}`);
             return newId;
         } else {
             console.log(`Failed to insert decision_related_citations for decision_id: ${decision_id}`);
@@ -358,7 +352,6 @@ export async function insert_decision_related_citations_citations(
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -461,7 +454,6 @@ export async function insert_decision_legal_teachings(
         
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
-            console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
             return true;
         } else {
             console.log(`No decision found with id: ${decision_id}`);
@@ -492,7 +484,6 @@ export async function insert_decisions_related_citations_legal_teachings(
         // Check if any rows were inserted
         if (result.rowCount && result.rowCount > 0) {
             const newId = result.rows[0].id;
-            console.log(`Successfully inserted decision_related_citations with id: ${newId}`);
             return newId;
         } else {
             console.log(`Failed to insert decision_related_citations for decision_id: ${decision_id}`);
@@ -527,7 +518,6 @@ export async function insert_decisions_related_citations_legal_teachings_citatio
       
       // Check if any rows were inserted
       if (result.rowCount && result.rowCount > 0) {
-          console.log(`Successfully inserted parties for decision with id: ${decision_id}`);
           return true;
       } else {
           console.log(`No decision found with id: ${decision_id}`);

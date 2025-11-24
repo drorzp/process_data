@@ -5,10 +5,61 @@ import { LegalDecisionData } from './legalData';
 import { insert_decision_legal_teachings, insert_decision_related_citations, insert_decision_related_citations_citations, insert_decisions_cited_provisions, insert_decisions_related_citations_legal_teachings, insert_decisions_related_citations_legal_teachings_citations, insert_extracted_references, insertArguments, insertCitedDecisions, insertParties, insertRequests, updateDecision } from './updateDecisions';
 // Type definitions for Legal Decision JSON structure
 
+/**
+ * Validates a date string and returns it if valid, or null if invalid
+ * @param dateString - The date string to validate (format: YYYY-MM-DD)
+ * @param context - Context information for logging (e.g., file name, field name)
+ * @returns A Date object if valid, null if invalid
+ */
+function validateDate(dateString: string | null | undefined, context: string): Date | null {
+  if (!dateString) {
+    return null;
+  }
+  
+  // Validate format: YYYY-MM-DD
+  const datePattern = /^(\d{4})-(\d{2})-(\d{2})$/;
+  const match = dateString.match(datePattern);
+  
+  if (!match) {
+    console.warn(`Invalid date format "${dateString}" in ${context}. Expected YYYY-MM-DD. Setting to null.`);
+    return null;
+  }
+  
+  const year = parseInt(match[1], 10);
+  const month = parseInt(match[2], 10);
+  const day = parseInt(match[3], 10);
+  
+  // Validate ranges
+  if (month < 1 || month > 12) {
+    console.warn(`Invalid date "${dateString}" in ${context} (month out of range). Setting to null.`);
+    return null;
+  }
+  
+  // Days in each month (non-leap year)
+  const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  
+  // Check for leap year
+  const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+  const maxDay = month === 2 && isLeapYear ? 29 : daysInMonth[month - 1];
+  
+  if (day < 1 || day > maxDay) {
+    console.warn(`Invalid date "${dateString}" in ${context} (day out of range for ${year}-${month.toString().padStart(2, '0')}). Setting to null.`);
+    return null;
+  }
+  
+  // Create Date object - use UTC to avoid timezone issues
+  const date = new Date(Date.UTC(year, month - 1, day));
+  
+  if (isNaN(date.getTime())) {
+    console.warn(`Invalid date "${dateString}" in ${context}. Setting to null.`);
+    return null;
+  }
+  
+  return date;
+}
 
 export async function processFile(fileName: string, pool: Pool): Promise<void> {
   try {
-    console.log(`Processing file: ${fileName}`);
     
     // Read the JSON file
     const filePath = path.join(__dirname, 'imported_files', fileName);
@@ -17,9 +68,9 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
     // Parse JSON content into an object
     const jsonData: LegalDecisionData = JSON.parse(fileContent);
     
-    console.log(`Parsed JSON for ${fileName}:`, jsonData.decision_id);
+
     const decisionId = await findById(jsonData.decision_id, pool);
-    console.log(` decision id: ${decisionId}`);
+
     
     if (decisionId === -1) {
       console.log(`Decision not found in database: ${jsonData.decision_id}. Copying to errors folder.`);
@@ -33,7 +84,6 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
       // Copy file to errors folder
       const errorFilePath = path.join(errorsDir, fileName);
       fs.copyFileSync(filePath, errorFilePath);
-      console.log(`File copied to: ${errorFilePath}`);
       
       return; // Skip to next file
     }
@@ -60,12 +110,17 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
           }
 
           for (const citedDecision of jsonData.citedDecisions) {
+            const validatedDate = validateDate(
+              citedDecision.date, 
+              `${fileName} - citedDecision ${citedDecision.internalDecisionId}`
+            );
+            
             await insertCitedDecisions( 
                 decisionId, 
                 citedDecision.decisionSequence,
                 citedDecision.courtJurisdictionCode, 
                 citedDecision.courtName,
-                 citedDecision.date, 
+                 validatedDate, 
                  citedDecision.caseNumber, 
                  citedDecision.ecli, 
                  citedDecision.treatment, 
@@ -75,6 +130,11 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
           }
 
           for (const citedProvision of jsonData.citedProvisions) {
+            const validatedParentActDate = validateDate(
+              citedProvision.parentActDate,
+              `${fileName} - citedProvision ${citedProvision.internalProvisionId}`
+            );
+            
             await insert_decisions_cited_provisions(
                 decisionId, 
                 citedProvision.provisionId,
@@ -85,7 +145,7 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
                  citedProvision.provisionNumberKey, 
                  citedProvision.parentActType, 
                  citedProvision.parentActName, 
-                 citedProvision.parentActDate,
+                 validatedParentActDate,
                  citedProvision.parentActNumber,
                  citedProvision.provisionInterpretation,
                  citedProvision.relevantFactualContext,
@@ -107,21 +167,23 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
         
 
 
-        for (const citedProvision of jsonData.relatedCitationsLegalProvisions.citedProvisions) {
-            const decisionRelatedCitationsId =  await insert_decision_related_citations(decisionId, 
-                citedProvision.internalProvisionId,
-                citedProvision.relatedInternalProvisionsId,
-                 citedProvision.relatedInternalDecisionsId,
-                  pool);
-                  for (const citation of citedProvision.citations) {
-                   await insert_decision_related_citations_citations(
-                        decisionId, 
-                        decisionRelatedCitationsId,
-                        citation.blockId,
-                         citation.relevantSnippet,
-                          pool);
-                  }
-          }
+        if (jsonData.relatedCitationsLegalProvisions?.citedProvisions) {
+          for (const citedProvision of jsonData.relatedCitationsLegalProvisions.citedProvisions) {
+              const decisionRelatedCitationsId =  await insert_decision_related_citations(decisionId, 
+                  citedProvision.internalProvisionId,
+                  citedProvision.relatedInternalProvisionsId,
+                   citedProvision.relatedInternalDecisionsId,
+                    pool);
+                    for (const citation of citedProvision.citations) {
+                     await insert_decision_related_citations_citations(
+                          decisionId, 
+                          decisionRelatedCitationsId,
+                          citation.blockId,
+                           citation.relevantSnippet,
+                            pool);
+                    }
+            }
+        }
 
           for (const legalTeaching of jsonData.legalTeachings) {
             await insert_decision_legal_teachings(decisionId, 
@@ -151,16 +213,18 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
                   pool);
           }
 
-          for (const legalTeachings of jsonData.relatedCitationsLegalTeachings.legalTeachings) {
-            const decision_related_citations_legal_teachings_id = await insert_decisions_related_citations_legal_teachings(decisionId, 
-                legalTeachings.teachingId,
-                pool);
-            for (const citation of legalTeachings.citations) {
-              await insert_decisions_related_citations_legal_teachings_citations(decisionId, 
-                decision_related_citations_legal_teachings_id,
-                citation.blockId,
-                citation.relevantSnippet,
-                pool);
+          if (jsonData.relatedCitationsLegalTeachings?.legalTeachings) {
+            for (const legalTeachings of jsonData.relatedCitationsLegalTeachings.legalTeachings) {
+              const decision_related_citations_legal_teachings_id = await insert_decisions_related_citations_legal_teachings(decisionId, 
+                  legalTeachings.teachingId,
+                  pool);
+              for (const citation of legalTeachings.citations) {
+                await insert_decisions_related_citations_legal_teachings_citations(decisionId, 
+                  decision_related_citations_legal_teachings_id,
+                  citation.blockId,
+                  citation.relevantSnippet,
+                  pool);
+              }
             }
           }
     

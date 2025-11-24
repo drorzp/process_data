@@ -82,7 +82,6 @@ async function downloadAndUnzipObject(key: string): Promise<void> {
             const writeStream = fs.createWriteStream(outputPath);
             entry.pipe(writeStream)
               .on('finish', () => {
-                console.log(`  Extracted: ${fileName}`);
                 resolveWrite();
               })
               .on('error', rejectWrite);

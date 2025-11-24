@@ -33,7 +33,7 @@ interface CitedProvision {
   provisionNumberKey: string;
   parentActType: string;
   parentActName: string;
-  parentActDate: Date | null;
+  parentActDate: string | null;
   parentActNumber: string | null;
   provisionInterpretation: string | null;
   relevantFactualContext: string | null;
@@ -45,7 +45,7 @@ interface CitedDecision {
   decisionSequence: number;
   courtJurisdictionCode: string;
   courtName: string;
-  date: Date;
+  date: string;
   caseNumber: string | null;
   ecli: string | null;
   treatment: string;

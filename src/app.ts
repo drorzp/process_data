@@ -18,7 +18,6 @@ const pool = new Pool({
 function deleteFile(filePath: string) {
   if (fs.existsSync(filePath)) {
     fs.unlinkSync(filePath);
-    console.log(`File deleted: ${filePath}`);
   }
 }
 
@@ -32,10 +31,8 @@ function deleteAllFilesInDirectory(dirPath: string) {
     const filePath = path.join(dirPath, file);
     if (fs.statSync(filePath).isFile()) {
       fs.unlinkSync(filePath);
-      console.log(`Cleaned up file: ${filePath}`);
     }
   }
-  console.log(`All files deleted from ${dirPath}`);
 }
 
 // Main async function
@@ -45,7 +42,6 @@ export async function main() {
   try {
     // Test database connection
     const client = await pool.connect();
-    console.log('Successfully connected to PostgreSQL database');
 
     // Read all JSON files directly from imported_files (files are flattened)
     const allEntries = fs.readdirSync(importedFilesDir);
@@ -54,14 +50,12 @@ export async function main() {
       return fs.statSync(fullPath).isFile() && fileName.endsWith('.json');
     });
 
-    console.log(`Found ${jsonFiles.length} JSON file(s) to process`);
 
     for (const fileName of jsonFiles) {
       const sourceFilePath = path.join(importedFilesDir, fileName);
 
       try {
         await processFile(fileName, pool);
-        console.log(fileName);
 
         // DELETE processed file if flag is enabled
         const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';
@@ -81,7 +75,6 @@ export async function main() {
         
         const errorFilePath = path.join(errorsDir, fileName);
         fs.copyFileSync(sourceFilePath, errorFilePath);
-        console.log(`File copied to errors folder: ${errorFilePath}`);
 
         // DELETE original file from imported_files if flag is enabled
         const shouldDelete = (process.env.DELETE_FILE || 'false').toLowerCase() === 'true';

@@ -2,6 +2,9 @@ ALTER TABLE decisions1
 ADD COLUMN custom_keywords varchar(255)[];
 
 ALTER TABLE decisions1 
+ADD COLUMN custom_keywords_s varchar(255)[];
+
+ALTER TABLE decisions1 
 ADD COLUMN micro_summary TEXT;
 
 
@@ -31,7 +34,7 @@ CREATE TABLE decision_parties (
   CONSTRAINT decision_parties_pkey PRIMARY KEY (id)
 );
 CREATE INDEX idx_decision_parties_decision_id ON decision_parties(decision_id);
-CREATE UNIQUE INDEX idx_decision_parties_party_id ON decision_parties(party_id);
+CREATE UNIQUE INDEX decision_parties_decision_id_idx ON public.decision_parties (decision_id,party_id,party_name);
 
 
 
@@ -89,8 +92,8 @@ provision_id INTEGER,
 parent_act_id INTEGER,
 internal_provision_id varchar(255),
 internal_parent_act_id varchar(255),
-provision_number varchar(100),
-provision_number_key varchar(30),
+provision_number varchar(255),
+provision_number_key varchar(120),
 parent_act_type varchar(30),
 parent_act_name TEXT,
 parent_act_date DATE,
@@ -146,11 +149,11 @@ CREATE TABLE decision_legal_teachings (
   relevant_factual_context TEXT,
   principle_type varchar(50),
   legal_area varchar(50),
-  refines_parent_principle varchar(50),
-  refined_by_child_principles varchar(50)[],
-  exception_to_principle varchar(50),
-  excepted_by_principles varchar(50)[],
-  conflicts_with varchar(50)[],
+  refines_parent_principle varchar(75),
+  refined_by_child_principles varchar(75)[],
+  exception_to_principle varchar(75),
+  excepted_by_principles varchar(75)[],
+  conflicts_with varchar(75)[],
   court_level varchar(50),
   teaching_binding boolean,
   clarity varchar(20),
@@ -158,7 +161,7 @@ CREATE TABLE decision_legal_teachings (
   confirms_existing_doctrine boolean,
   distinguishes_prior_case boolean,
   related_legal_issues_id varchar(60)[],
-  related_cited_provisions_id varchar(60)[],
+  related_cited_provisions_id varchar(90)[],
   related_cited_decisions_id varchar(60)[],
   source_author varchar(100),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -224,3 +227,4 @@ CREATE INDEX idx_drcltc_legal_teachings_id
   );
   CREATE INDEX idx_decision_extracted_references_decision_id 
   ON decision_extracted_references(decision_id);
+
