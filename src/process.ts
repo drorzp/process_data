@@ -11,7 +11,7 @@ import { insert_decision_legal_teachings, insert_decision_related_citations, ins
  * @param context - Context information for logging (e.g., file name, field name)
  * @returns A Date object if valid, null if invalid
  */
-function validateDate(dateString: string | null | undefined, context: string): Date | null {
+function validateDate(dateString: string | null | undefined, context: string): string | null {
   if (!dateString) {
     return null;
   }
@@ -55,7 +55,7 @@ function validateDate(dateString: string | null | undefined, context: string): D
     return null;
   }
   
-  return date;
+  return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 }
 
 export async function processFile(fileName: string, pool: Pool): Promise<void> {
