@@ -1,3 +1,6 @@
+    INSERT INTO decision_related_citations (decision_id, internal_provision_id, related_internal_decisions_id)
+
+
 ALTER TABLE decisions1 
 ADD COLUMN custom_keywords varchar(255)[];
 
@@ -112,8 +115,8 @@ CREATE TABLE decision_related_citations (
   id serial4 NOT NULL,
   decision_id INTEGER NOT NULL,
   internal_provision_id varchar(60),
-  related_internal_provisions_id varchar(60)[],
   related_internal_decisions_id varchar(60)[],
+  related_internal_provisions_id varchar(60)[],
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT decision_related_citations_pkey PRIMARY KEY (id)

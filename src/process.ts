@@ -167,12 +167,12 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
         
 
 
-        if (jsonData.relatedCitationsLegalProvisions?.citedProvisions) {
-          for (const citedProvision of jsonData.relatedCitationsLegalProvisions.citedProvisions) {
+        if (jsonData.relatedCitationsLegalProvisions ) {
+          for (const citedProvision of jsonData.relatedCitationsLegalProvisions) {
               const decisionRelatedCitationsId =  await insert_decision_related_citations(decisionId, 
                   citedProvision.internalProvisionId,
-                  citedProvision.relatedInternalProvisionsId,
                    citedProvision.relatedInternalDecisionsId,
+                   citedProvision.relatedInternalProvisionsId,
                     pool);
                     for (const citation of citedProvision.citations) {
                      await insert_decision_related_citations_citations(
@@ -213,12 +213,12 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
                   pool);
           }
 
-          if (jsonData.relatedCitationsLegalTeachings?.legalTeachings) {
-            for (const legalTeachings of jsonData.relatedCitationsLegalTeachings.legalTeachings) {
+          if (jsonData.relatedCitationsLegalTeachings) {
+            for (const teachingCitation of jsonData.relatedCitationsLegalTeachings) {
               const decision_related_citations_legal_teachings_id = await insert_decisions_related_citations_legal_teachings(decisionId, 
-                  legalTeachings.teachingId,
+                  teachingCitation.teachingId,
                   pool);
-              for (const citation of legalTeachings.citations) {
+              for (const citation of teachingCitation.citations) {
                 await insert_decisions_related_citations_legal_teachings_citations(decisionId, 
                   decision_related_citations_legal_teachings_id,
                   citation.blockId,

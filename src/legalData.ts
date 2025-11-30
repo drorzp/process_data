@@ -101,14 +101,19 @@ interface ProvisionCitation {
 interface TeachingCitation {
   teachingId: string;
   citations: Citation[];
+  relationshipValidation?: {
+    provisionsValidated: number;
+    provisionsNotFoundInCitations: string[];
+    decisionsValidated: number;
+    decisionsNotFoundInCitations: string[];
+  };
 }
 
 interface RelatedCitationsLegalProvisions {
-  citedProvisions: ProvisionCitation[];
-}
-
-interface RelatedCitationsLegalTeachings {
-  legalTeachings: TeachingCitation[];
+  internalProvisionId: string,
+  relatedInternalDecisionsId: string[]
+  relatedInternalProvisionsId: string[]
+  citations: Citation[]
 }
 
 interface ExtractedReferences {
@@ -132,7 +137,7 @@ export interface LegalDecisionData {
   customKeywords: string[];
   legalTeachings: LegalTeaching[];
   microSummary: string;
-  relatedCitationsLegalProvisions: RelatedCitationsLegalProvisions;
-  relatedCitationsLegalTeachings: RelatedCitationsLegalTeachings;
+  relatedCitationsLegalProvisions: RelatedCitationsLegalProvisions[];
+  relatedCitationsLegalTeachings: TeachingCitation[];
   extractedReferences: ExtractedReferences;
 }

@@ -296,13 +296,13 @@ export async function insert_decisions_cited_provisions(
 
 export async function insert_decision_related_citations(
   decision_id: number, 
-  internal_provision_id: string | null, 
-  related_internal_provisions_id: string[] | null, 
-  related_internal_decisions_id: string[] | null,
+  internal_provision_id: string,
+  related_internal_decisions_id: string[],
+  related_internal_provisions_id: string[],
   pool: Pool): Promise<number> {
     try {
         const query = `
-            INSERT INTO decision_related_citations (decision_id, internal_provision_id, related_internal_provisions_id, related_internal_decisions_id)
+            INSERT INTO decision_related_citations (decision_id, internal_provision_id, related_internal_decisions_id, related_internal_provisions_id)
             VALUES ($1, $2, $3, $4)
             RETURNING id
         `;
@@ -310,8 +310,8 @@ export async function insert_decision_related_citations(
         const result = await pool.query(query, [
            decision_id,
             internal_provision_id,
-            related_internal_provisions_id,
-            related_internal_decisions_id
+            related_internal_decisions_id,
+            related_internal_provisions_id
         ]);
         
         // Check if any rows were inserted
