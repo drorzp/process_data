@@ -11,7 +11,7 @@ import { insert_decision_legal_teachings, insert_decision_related_citations, ins
  * @param context - Context information for logging (e.g., file name, field name)
  * @returns A Date object if valid, null if invalid
  */
-function validateDate(dateString: string | null | undefined, context: string): string | null {
+function validateDate(dateString: string | null | undefined, context: string, fileName: string): string | null {
   if (!dateString) {
     return null;
   }
@@ -44,6 +44,27 @@ function validateDate(dateString: string | null | undefined, context: string): s
   
   if (day < 1 || day > maxDay) {
     console.warn(`Invalid date "${dateString}" in ${context} (day out of range for ${year}-${month.toString().padStart(2, '0')}). Setting to null.`);
+    
+    // Copy file to errors folder
+    try {
+      const errorsDir = path.join(__dirname, 'errors');
+      if (!fs.existsSync(errorsDir)) {
+        fs.mkdirSync(errorsDir, { recursive: true });
+      }
+      
+      const sourceFilePath = path.join(__dirname, 'imported_files', fileName);
+      const errorFileName = fileName.replace('.json', '_invalid_date.json');
+      const errorFilePath = path.join(errorsDir, errorFileName);
+      
+      // Check if source file exists before copying (it should, but safety first)
+      if (fs.existsSync(sourceFilePath)) {
+         fs.copyFileSync(sourceFilePath, errorFilePath);
+         console.log(`Copied ${fileName} to errors folder as ${errorFileName} due to invalid date.`);
+      }
+    } catch (error) {
+      console.error(`Failed to copy ${fileName} to errors folder:`, error);
+    }
+
     return null;
   }
   
@@ -91,7 +112,7 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
         await updateDecision(decisionId,  
             jsonData.customKeywords,
             jsonData.microSummary,
-            jsonData.citation_reference,
+            jsonData.citationReference,
             jsonData.currentInstance.facts,
             jsonData.currentInstance.courtOrder,
             jsonData.currentInstance.outcome,
@@ -112,7 +133,8 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
           for (const citedDecision of jsonData.citedDecisions) {
             const validatedDate = validateDate(
               citedDecision.date, 
-              `${fileName} - citedDecision ${citedDecision.internalDecisionId}`
+              `${fileName} - citedDecision ${citedDecision.internalDecisionId}`,
+              fileName
             );
             
             await insertCitedDecisions( 
@@ -132,7 +154,8 @@ export async function processFile(fileName: string, pool: Pool): Promise<void> {
           for (const citedProvision of jsonData.citedProvisions) {
             const validatedParentActDate = validateDate(
               citedProvision.parentActDate,
-              `${fileName} - citedProvision ${citedProvision.internalProvisionId}`
+              `${fileName} - citedProvision ${citedProvision.internalProvisionId}`,
+              fileName
             );
             
             await insert_decisions_cited_provisions(

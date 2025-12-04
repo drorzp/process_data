@@ -129,7 +129,7 @@ interface ExtractedReferences {
 export interface LegalDecisionData {
   decision_id: string;
   language: string;
-  citation_reference: string;
+  citationReference: string;
   parties: Party[];
   currentInstance: CurrentInstance;
   citedProvisions: CitedProvision[];

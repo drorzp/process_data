@@ -1,5 +1,3 @@
-    INSERT INTO decision_related_citations (decision_id, internal_provision_id, related_internal_decisions_id)
-
 
 ALTER TABLE decisions1 
 ADD COLUMN custom_keywords varchar(255)[];
